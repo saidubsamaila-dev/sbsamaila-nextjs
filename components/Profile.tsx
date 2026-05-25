@@ -114,13 +114,16 @@ export default function Profile() {
             </div>
             <h3 className="text-xl font-bold text-navy pt-1.5">Our Vision</h3>
           </div>
-          <div className="ml-14 border-l-4 border-gray-100 pl-6">
-            <p className="text-gray-600 leading-relaxed italic">
-              &ldquo;To help organizations see further and deeper into their businesses. Our work aims at
-              assessing the financial health of organizations, helping them foresee and prevent
-              financial crises and enhance trust among stakeholders using the best possible and
-              innovative professional tools.&rdquo;
-            </p>
+          <div className="ml-14">
+            <div className="border-l-4 border-gold bg-gold/5 rounded-r-xl px-6 py-5">
+              <span className="text-gold text-4xl font-serif leading-none">&ldquo;</span>
+              <p className="text-navy text-base leading-relaxed font-medium -mt-2">
+                To help organizations see further and deeper into their businesses. Our work aims at
+                assessing the financial health of organizations, helping them foresee and prevent
+                financial crises and enhance trust among stakeholders using the best possible and
+                innovative professional tools.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -132,13 +135,16 @@ export default function Profile() {
             </div>
             <h3 className="text-xl font-bold text-navy pt-1.5">Our Mission</h3>
           </div>
-          <div className="ml-14 border-l-4 border-gray-100 pl-6">
-            <p className="text-gray-600 leading-relaxed italic">
-              &ldquo;We audit to assist organizations in meeting regulatory and market standards and stay
-              uptrend in their industries. An audit is more than an obligation — it is a powerful lens
-              for illuminating the current state of an enterprise, providing insight that informs
-              future aspirations.&rdquo;
-            </p>
+          <div className="ml-14">
+            <div className="border-l-4 border-gold bg-gold/5 rounded-r-xl px-6 py-5">
+              <span className="text-gold text-4xl font-serif leading-none">&ldquo;</span>
+              <p className="text-navy text-base leading-relaxed font-medium -mt-2">
+                We audit to assist organizations in meeting regulatory and market standards and stay
+                uptrend in their industries. An audit is more than an obligation — it is a powerful
+                lens for illuminating the current state of an enterprise, providing insight that
+                informs future aspirations.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -150,12 +156,10 @@ export default function Profile() {
             </div>
             <h3 className="text-xl font-bold text-navy pt-1.5">Core Values</h3>
           </div>
-          <div className="ml-14 grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="ml-14 flex flex-wrap gap-x-8 gap-y-3">
             {coreValues.map((v) => (
-              <div
-                key={v}
-                className="bg-[#FAF9F6] border border-gray-100 rounded-lg px-4 py-3 text-center"
-              >
+              <div key={v} className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-gold flex-shrink-0" />
                 <span className="text-navy font-semibold text-sm">{v}</span>
               </div>
             ))}
