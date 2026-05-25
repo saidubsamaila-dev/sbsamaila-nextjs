@@ -106,39 +106,35 @@ export default function Profile() {
           </div>
         </div>
 
-        {/* Vision */}
+        {/* Mission & Vision */}
         <div className="py-10 border-t border-gray-100">
-          <div className="flex items-start gap-4 mb-6">
+          <div className="flex items-start gap-4 mb-8">
             <div className="flex-shrink-0 w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center">
-              <Eye size={20} className="text-gold" />
+              <Target size={20} className="text-gold" />
             </div>
-            <h3 className="text-xl font-bold text-navy pt-1.5">Our Vision</h3>
+            <h3 className="text-xl font-bold text-navy pt-1.5">Mission &amp; Vision</h3>
           </div>
-          <div className="ml-14">
-            <div className="border-l-4 border-gold bg-gold/5 rounded-r-xl px-6 py-5">
-              <span className="text-gold text-4xl font-serif leading-none">&ldquo;</span>
-              <p className="text-navy text-base leading-relaxed font-medium -mt-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {/* Vision Card */}
+            <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+              <div className="flex items-center gap-3 mb-3">
+                <Eye size={18} className="text-gold" />
+                <h4 className="text-navy font-bold text-sm">Vision Statement</h4>
+              </div>
+              <p className="text-gray-600 text-sm leading-relaxed">
                 To help organizations see further and deeper into their businesses. Our work aims at
                 assessing the financial health of organizations, helping them foresee and prevent
                 financial crises and enhance trust among stakeholders using the best possible and
                 innovative professional tools.
               </p>
             </div>
-          </div>
-        </div>
-
-        {/* Mission */}
-        <div className="py-10 border-t border-gray-100">
-          <div className="flex items-start gap-4 mb-6">
-            <div className="flex-shrink-0 w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center">
-              <Target size={20} className="text-gold" />
-            </div>
-            <h3 className="text-xl font-bold text-navy pt-1.5">Our Mission</h3>
-          </div>
-          <div className="ml-14">
-            <div className="border-l-4 border-gold bg-gold/5 rounded-r-xl px-6 py-5">
-              <span className="text-gold text-4xl font-serif leading-none">&ldquo;</span>
-              <p className="text-navy text-base leading-relaxed font-medium -mt-2">
+            {/* Mission Card */}
+            <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+              <div className="flex items-center gap-3 mb-3">
+                <Target size={18} className="text-gold" />
+                <h4 className="text-navy font-bold text-sm">Mission Statement</h4>
+              </div>
+              <p className="text-gray-600 text-sm leading-relaxed">
                 We audit to assist organizations in meeting regulatory and market standards and stay
                 uptrend in their industries. An audit is more than an obligation — it is a powerful
                 lens for illuminating the current state of an enterprise, providing insight that
@@ -154,13 +150,15 @@ export default function Profile() {
             <div className="flex-shrink-0 w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center">
               <Star size={20} className="text-gold" />
             </div>
-            <h3 className="text-xl font-bold text-navy pt-1.5">Core Values</h3>
+            <h3 className="text-xl font-bold text-navy pt-1.5">Our Core Values</h3>
           </div>
-          <div className="ml-14 flex flex-wrap gap-x-8 gap-y-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {coreValues.map((v) => (
-              <div key={v} className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-gold flex-shrink-0" />
-                <span className="text-navy font-semibold text-sm">{v}</span>
+              <div
+                key={v}
+                className="bg-white border border-gray-200 rounded-xl px-4 py-5 text-center shadow-sm"
+              >
+                <span className="text-navy font-bold text-sm">{v}</span>
               </div>
             ))}
           </div>
