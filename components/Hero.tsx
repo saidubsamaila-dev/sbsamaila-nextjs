@@ -1,4 +1,4 @@
-import { ArrowRight, ShieldCheck } from 'lucide-react'
+import { ArrowRight, ShieldCheck, Sparkles } from 'lucide-react'
 import Image from 'next/image'
 
 export default function Hero() {
@@ -41,6 +41,15 @@ export default function Hero() {
 
           {/* CTAs */}
           <div className="flex flex-wrap gap-4">
+            <a
+              href="https://chamcodigital.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-blue-600 text-white font-semibold px-6 py-3 rounded-md hover:bg-blue-700 transition-colors"
+            >
+              <Sparkles size={16} />
+              Explore Chamco Digital
+            </a>
             <a
               href="#services"
               className="inline-flex items-center gap-2 bg-gold text-white font-semibold px-6 py-3 rounded-md hover:bg-gold-dark transition-colors"

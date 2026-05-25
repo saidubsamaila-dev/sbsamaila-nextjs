@@ -47,6 +47,15 @@ export default function Navbar() {
               </a>
             ))}
             <a
+              href="https://chamcodigital.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-700 transition-colors flex items-center gap-1.5"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-300 animate-pulse" />
+              Chamco Digital
+            </a>
+            <a
               href="#contact"
               className="bg-navy text-white text-sm font-semibold px-4 py-2 rounded-md hover:bg-navy-light transition-colors"
             >
@@ -78,6 +87,16 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+          <a
+            href="https://chamcodigital.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-md text-center flex items-center justify-center gap-1.5"
+            onClick={() => setMobileOpen(false)}
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-300 animate-pulse" />
+            Chamco Digital
+          </a>
           <a
             href="#contact"
             className="bg-navy text-white text-sm font-semibold px-4 py-2 rounded-md text-center"
