@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import Navbar from '@/components/Navbar'
 import {
   ArrowRight, Sparkles, Shield, Database, Cloud, Zap,
-  Server, Monitor, GitMerge, Settings, CheckCircle, ArrowLeft,
+  Server, Monitor, GitMerge, Settings, CheckCircle,
 } from 'lucide-react'
 
 const services = [
@@ -93,52 +93,7 @@ export default function ChamcoPage() {
   return (
     <main className="bg-[#0f1729] min-h-screen text-white">
 
-      {/* Top bar */}
-      <div className="border-b border-white/10 bg-[#0a1020]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <Link href="/" className="flex items-center gap-2 text-gray-400 hover:text-white text-sm transition-colors">
-              <ArrowLeft size={14} />
-              Back to SBS Samaila & Co.
-            </Link>
-            <span className="text-white/20">|</span>
-            <span className="text-gray-400 text-xs">Training & Technology Partner</span>
-          </div>
-          <div className="relative w-28 h-7">
-            <Image
-              src="https://www.sbsamailaaccountants.com/assets/chamco-logo-BHk3-6fy.jpg"
-              alt="Chamco Digital"
-              fill
-              className="object-contain object-right"
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Navbar */}
-      <nav className="sticky top-0 z-50 bg-[#0a1020]/95 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Sparkles size={20} className="text-blue-400" />
-            <span className="text-white font-bold text-lg">Chamco<span className="text-blue-400">Digital</span></span>
-          </div>
-          <div className="hidden md:flex items-center gap-6 text-sm text-gray-300">
-            <a href="#about" className="hover:text-white transition-colors">About</a>
-            <a href="#services" className="hover:text-white transition-colors">Services</a>
-            <a href="#training" className="hover:text-white transition-colors">Learning</a>
-            <a href="#industries" className="hover:text-white transition-colors">Industries</a>
-            <a href="#methodology" className="hover:text-white transition-colors">Methodology</a>
-            <a
-              href="https://chamcodigital.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              Visit Chamco Digital ↗
-            </a>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero */}
       <section className="relative py-28 lg:py-40 overflow-hidden">
@@ -424,9 +379,8 @@ export default function ChamcoPage() {
             <span className="text-white font-bold">Chamco<span className="text-blue-400">Digital</span></span>
             <span className="text-gray-600 text-xs ml-2">©2025 Chamco Digital LLC. All rights reserved.</span>
           </div>
-          <Link href="/" className="text-gray-400 hover:text-white text-sm flex items-center gap-2 transition-colors">
-            <ArrowLeft size={14} />
-            Back to Saidu B. Samaila & Co.
+          <Link href="/" className="text-gray-400 hover:text-white text-sm transition-colors">
+            ← Back to Saidu B. Samaila &amp; Co.
           </Link>
         </div>
       </footer>

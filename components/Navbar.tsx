@@ -47,9 +47,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="https://chamcodigital.com/"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/chamco"
               className="bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-md hover:bg-blue-700 transition-colors flex items-center gap-1.5"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-blue-300 animate-pulse" />
