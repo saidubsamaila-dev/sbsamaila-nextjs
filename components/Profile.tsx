@@ -1,8 +1,12 @@
+'use client'
+
+import { useState } from 'react'
 import {
   BookOpen, Building2, Eye, Target, Star, GraduationCap,
   FileText, Calculator, Monitor, ShieldCheck, Handshake, Users, Award,
   type LucideIcon,
 } from 'lucide-react'
+import ProfileModal, { type TeamMemberProfile } from './ProfileModal'
 
 const coreValues = [
   'Honesty', 'Teamwork', 'Fairness', 'Accountability',
@@ -99,46 +103,98 @@ const collaboratingFirms = [
   },
 ]
 
-const teamMembers = [
+const teamMembers: TeamMemberProfile[] = [
   {
     name: 'Dr. Saidu Balarabe Samaila',
     credentials: 'BSC, MBA, ACA, FCA, ACTI, AMNIM, FCTI, FIMC, FNITD',
+    title: 'Principal Partner — Former Honourable Minister of State, Foreign Affairs; Former Minister of State, Interior; and Former Minister of Sports and Social Development, Federal Republic of Nigeria.',
     bio: 'Principal Partner — Former Honourable Minister of State, Foreign Affairs; Former Minister of State, Interior; and Former Minister of Sports and Social Development.',
+    executiveSummary: `Dr. Saidu Balarabe Samaila is a prominent Chartered Accountant, Chartered Tax Expert, Management Consultant, Experienced Banker, Financial Planner and Strategist, Politician, Diplomat, Experienced Administrator, team player and a very patriotic Nigerian and African.
+
+He has served Nigeria as Hon. Minister of State in the Ministry of Foreign Affairs, Hon. Minister of State in the Ministry of Interior, and Hon. Minister of Sports and Social Development — all cabinet-level positions. In these roles, he met and worked with world leaders including Her Late Royal Majesty Queen Elizabeth II, Prime Ministers of Japan, Australia, and the United Kingdom, and Presidents of Germany, South Africa, Ghana, Rwanda, and others, helping restore democracy in Guinea Bissau, Sao Tome and Principe, and Liberia.
+
+After a stint in Accountancy Practice, he began a banking career with Savannah Bank, then Bank of America (NT and SA). His banking career (1986–2002) saw him rise to Deputy Managing Director/Chief Operations Officer of Inland Bank Plc (now FCMB Group). He has served on boards of major corporate organizations in Nigeria and abroad, including All Africa Global Media (Allafrica.com), Washington DC, and was Chairman of the Board of Management of Aminu Kano Teaching Hospital. He helped lobby the U.S. Congress to set up the Africa Growth and Opportunity Act (AGOA).
+
+He is currently Chairman of Sigma Engineering and Constructions Limited (SIGMA Group), Managing Partner of Saidu B. Samaila & Co. Chartered Accountants, and Chairman of SAMBAWA FARMS LIMITED (Km 30, Kaduna-Zaria Express Road, Bimin Yaro, Kaduna State), which has employed over 1,000 people.
+
+Educated at Ahmadu Bello University, Zaria (B.Sc. Accounting, 1984); MBA jointly awarded by the University of Wales (Bangor) and the University of Manchester, UK; and Doctor of Management from St. Clements University (thesis: 'Banking Crisis in Emerging Economies — The Nigerian Experience 1989–1999'). He is a Fellow of the Chartered Institute of Taxation of Nigeria, the Institute of Chartered Accountants of Nigeria, the Nigerian Institute of Training and Development, the Institute of Management Consultants, and the Nigerian Institute of Management.`,
   },
   {
     name: 'Abubakar Danlami Sule',
     credentials: 'B.SC, HCIB, FCA, AMNIM',
+    title: 'Consultant',
     bio: 'Consultant — Former Acting MD, Keystone Bank Plc. Wharton Executive Development alumnus.',
+    executiveSummary: `Abubakar Danlami Sule is a seasoned banking and finance professional with extensive experience in financial management, corporate governance and institutional leadership.
+
+He served as Former Acting Managing Director of Keystone Bank Plc, bringing to the role decades of banking expertise and executive leadership. He is an alumnus of the Wharton Executive Development Programme at the Wharton School, University of Pennsylvania — one of the world's foremost business schools.
+
+A Fellow of the Institute of Chartered Accountants of Nigeria (FCA) and an Associate Member of the Nigerian Institute of Management (AMNIM), he brings deep technical expertise in financial services, audit, and advisory to the firm.`,
   },
   {
     name: 'Haliru Labbo Karaye',
     credentials: 'B.SC, ACTI, FCA, MNIM',
+    title: 'Public Sector Accounting Specialist',
     bio: 'Public Sector Accounting Specialist — 40+ years experience; former Kebbi State Commissioner of Agriculture.',
+    executiveSummary: `Haliru Labbo Karaye is a distinguished public sector accounting specialist with over four decades of professional experience spanning government, agriculture, and financial management.
+
+He served as Commissioner of Agriculture in Kebbi State, demonstrating extensive experience at the intersection of public administration and financial governance. His deep knowledge of government accounting systems, public finance management, and regulatory compliance makes him a valuable asset to public sector clients.
+
+He holds the Associate of the Chartered Institute of Taxation of Nigeria (ACTI), Fellow of the Institute of Chartered Accountants of Nigeria (FCA), and Member of the Nigerian Institute of Management (MNIM).`,
   },
   {
     name: 'Yusuf Abdurrasheed Usman',
     credentials: 'B.SC, FCA',
+    title: 'ICT, Audit & Assurance Specialist',
     bio: 'ICT, Audit & Assurance Specialist — 25+ years in audit, training and tax consultancy.',
+    executiveSummary: `Yusuf Abdurrasheed Usman is a highly experienced ICT, Audit and Assurance Specialist with over 25 years of professional practice in audit, training and tax consultancy.
+
+He brings a rare combination of information technology expertise and deep accounting knowledge, making him particularly effective in technology-driven audit engagements and assurance assignments. His extensive background in training and development enables him to build capacity within client organisations while delivering high-quality audit and compliance outcomes.
+
+He is a Fellow of the Institute of Chartered Accountants of Nigeria (FCA), reflecting the highest professional standards in the accountancy profession.`,
   },
   {
     name: 'Balogun Toheeb Adewale',
     credentials: 'B.SC, M.SC',
+    title: 'Finance & Accounts Executive',
     bio: 'Finance & Accounts Executive — 7+ years of experience in finance and accounts.',
+    executiveSummary: `Balogun Toheeb Adewale is a Finance and Accounts Executive with over seven years of professional experience in financial management, reporting and accounts administration.
+
+He holds a Bachelor of Science and a Master of Science degree, bringing both academic rigour and practical expertise to his role. He supports the firm's financial operations, client reporting and accounts management, ensuring accuracy and compliance across all financial functions.
+
+His attention to detail and commitment to professional excellence contribute significantly to the firm's ability to deliver reliable financial services to its diverse client base.`,
   },
   {
     name: 'Enakhimion Olabisi Omonigho',
     credentials: 'B.SC',
+    title: 'Administrative Executive',
     bio: 'Administrative Executive — 5+ years of administrative and operations experience.',
+    executiveSummary: `Enakhimion Olabisi Omonigho is an Administrative Executive with over five years of experience in administrative management and business operations.
+
+She plays a critical role in the firm's day-to-day administrative functions, ensuring smooth operational coordination across teams and client engagements. Her organizational skills, attention to detail and commitment to service delivery support the firm's ability to maintain high standards of client service and internal efficiency.
+
+She holds a Bachelor of Science degree and continues to develop her professional skills in business administration and organizational management.`,
   },
   {
     name: 'Nzeakor Joy Adaeze',
     credentials: 'B.SC',
+    title: 'Sales & Marketing Executive / IT Assistant',
     bio: 'Sales & Marketing Executive and IT Assistant — 4+ years across sales, marketing and IT support.',
+    executiveSummary: `Nzeakor Joy Adaeze is a versatile professional serving as both Sales & Marketing Executive and IT Assistant, with over four years of combined experience across business development, marketing and information technology support.
+
+Her dual expertise enables her to bridge the gap between technology and client-facing business development, contributing to the firm's growth strategy while supporting its digital and IT operations. She is responsible for client outreach, marketing initiatives, and providing frontline IT assistance to the team.
+
+She holds a Bachelor of Science degree and brings enthusiasm, adaptability and a results-driven approach to her multifaceted role within the firm.`,
   },
   {
     name: 'Onaopemipo Grace Adebisi',
     credentials: 'B.SC',
+    title: 'Sales & Marketing Executive',
     bio: 'Sales & Marketing Executive — 6+ years in sales and marketing.',
+    executiveSummary: `Onaopemipo Grace Adebisi is an accomplished Sales and Marketing Executive with over six years of professional experience in business development, client acquisition and marketing strategy.
+
+She plays a key role in driving the firm's business growth, managing client relationships, and developing marketing campaigns that position Saidu B. Samaila & Co. as a leading accounting and advisory firm in Nigeria. Her strategic thinking, communication skills and market understanding enable her to identify and pursue new business opportunities effectively.
+
+She holds a Bachelor of Science degree and is committed to continuous professional development in sales, marketing and business strategy.`,
   },
 ]
 
@@ -185,6 +241,8 @@ function ServiceCard({ title, desc }: { title: string; desc?: string }) {
 }
 
 export default function Profile() {
+  const [selectedMember, setSelectedMember] = useState<TeamMemberProfile | null>(null)
+
   return (
     <section id="profile" className="bg-white py-20 lg:py-28">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -344,7 +402,6 @@ export default function Profile() {
               <ServiceCard key={s} title={s} />
             ))}
           </div>
-          {/* Laserfiche deployments sub-card */}
           <div className="border border-gold/30 rounded-xl p-5 bg-gold/5">
             <p className="text-gold text-xs font-bold uppercase tracking-widest mb-4">
               Laserfiche ECM — Notable Deployments (via ASI)
@@ -406,7 +463,10 @@ export default function Profile() {
                   {m.credentials}
                 </p>
                 <p className="text-gray-500 text-xs leading-relaxed mt-2 mb-3">{m.bio}</p>
-                <button className="text-gold text-xs font-semibold hover:underline flex items-center gap-1">
+                <button
+                  onClick={() => setSelectedMember(m)}
+                  className="text-gold text-xs font-semibold hover:underline flex items-center gap-1"
+                >
                   Read profile →
                 </button>
               </div>
@@ -415,6 +475,14 @@ export default function Profile() {
         </SectionBlock>
 
       </div>
+
+      {/* Profile Modal */}
+      {selectedMember && (
+        <ProfileModal
+          member={selectedMember}
+          onClose={() => setSelectedMember(null)}
+        />
+      )}
     </section>
   )
 }
