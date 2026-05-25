@@ -1,6 +1,4 @@
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
-
   return (
     <footer
       className="py-16"
@@ -55,7 +53,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-gray-500 text-xs">
-          <p>&copy; {currentYear} Saidu B. Samaila &amp; Co. Chartered Accountants. All rights reserved.</p>
+          <p>&copy; 2026 Saidu B. Samaila &amp; Co. Chartered Accountants. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <span>ICAN Licensed</span>
             <span className="text-gold/30">•</span>

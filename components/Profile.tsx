@@ -1,4 +1,4 @@
-import { BookOpen, Building2, Eye, Target, Star } from 'lucide-react'
+import { BookOpen, Building2, Eye, Target, Star, GraduationCap, FileText, Calculator, Monitor } from 'lucide-react'
 
 const coreValues = [
   'Honesty', 'Teamwork', 'Fairness', 'Accountability',
@@ -173,6 +173,88 @@ export default function Profile() {
                 {f.note && <p className="text-gray-500 text-xs mt-1">{f.note}</p>}
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Service Divisions */}
+        <div className="py-10 border-t border-gray-100">
+          <h3 className="text-2xl font-extrabold text-navy mb-8">Our Service Divisions</h3>
+
+          <div className="space-y-8">
+            {/* Training Division */}
+            <div className="bg-[#FAF9F6] rounded-xl border border-gray-100 p-6">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-9 h-9 bg-gold/10 rounded-lg flex items-center justify-center">
+                  <GraduationCap size={18} className="text-gold" />
+                </div>
+                <h4 className="text-navy font-bold text-base">Training &amp; Human Capital Development Division</h4>
+              </div>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Offers tailored learning programs including financial management systems, leadership development,
+                management systems strengthening, and Microsoft Office Suite training (Word, PowerPoint, Excel).
+              </p>
+            </div>
+
+            {/* Audit Division */}
+            <div className="bg-[#FAF9F6] rounded-xl border border-gray-100 p-6">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-9 h-9 bg-gold/10 rounded-lg flex items-center justify-center">
+                  <FileText size={18} className="text-gold" />
+                </div>
+                <h4 className="text-navy font-bold text-base">Audit &amp; Assurance Services Division</h4>
+              </div>
+              <p className="text-gray-600 text-sm leading-relaxed mb-3">
+                Founded by Dr. Saidu Balarabe Samaila. Delivers audit and assurance services aligned with
+                GAAP and International Standards on Auditing (ISA):
+              </p>
+              <ul className="space-y-1.5">
+                {['Tax Management', 'Global Audit (GAAP and ISA aligned)', 'Public Sector Audit Services',
+                  'Private Sector Audit Services', 'Employee Benefit Plan Audit'].map((item) => (
+                  <li key={item} className="flex items-center gap-2 text-sm text-gray-600">
+                    <div className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Tax Division */}
+            <div className="bg-[#FAF9F6] rounded-xl border border-gray-100 p-6">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-9 h-9 bg-gold/10 rounded-lg flex items-center justify-center">
+                  <Calculator size={18} className="text-gold" />
+                </div>
+                <h4 className="text-navy font-bold text-base">Tax &amp; Consultancy Services Division</h4>
+              </div>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Professional tax expertise across multiple authorities, including compliance, debt counselling,
+                credit restoration, payroll services, and financial reporting. Available 24/7.
+              </p>
+            </div>
+
+            {/* ICT Division */}
+            <div className="bg-[#FAF9F6] rounded-xl border border-gray-100 p-6">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-9 h-9 bg-gold/10 rounded-lg flex items-center justify-center">
+                  <Monitor size={18} className="text-gold" />
+                </div>
+                <h4 className="text-navy font-bold text-base">ICT Services Division</h4>
+              </div>
+              <p className="text-gray-600 text-sm leading-relaxed mb-3">
+                Through partnerships with NewGenTeck IT Solution Services and Automated System International (ASI):
+              </p>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                {['Security Engineering & Architecture', 'IT Support & Technical Consulting',
+                  'Forensics & Incident Response (EnCase)', 'Information Assurance & Audit',
+                  'Penetration Testing & Assessment', 'Data Loss Prevention (Forcepoint)',
+                  'SIEM & Threat Monitoring (Splunk)', 'Enterprise Document & Records Management (Laserfiche ECM)'].map((item) => (
+                  <li key={item} className="flex items-center gap-2 text-sm text-gray-600">
+                    <div className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 

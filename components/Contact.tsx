@@ -7,7 +7,7 @@ const contactDetails = [
   {
     icon: Phone,
     label: 'Phone',
-    value: '+234 946 961 1740 · +234 912 310 0100',
+    value: '+234 912 130 0300 · +234 912 310 0100',
   },
   {
     icon: Globe,
@@ -35,7 +35,9 @@ export default function Contact() {
   })
   const [submitted, setSubmitted] = useState(false)
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
@@ -130,14 +132,21 @@ export default function Contact() {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1.5">Service Needed</label>
-                  <input
-                    type="text"
+                  <select
                     name="service"
                     value={form.service}
                     onChange={handleChange}
-                    placeholder="e.g. Audit, Tax, Advisory..."
-                    className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy transition"
-                  />
+                    className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy transition bg-white"
+                  >
+                    <option value="">Select a service...</option>
+                    <option value="Audit & Assurance">Audit &amp; Assurance</option>
+                    <option value="Tax Advisory">Tax Advisory</option>
+                    <option value="Accounting & Bookkeeping">Accounting &amp; Bookkeeping</option>
+                    <option value="Business Advisory">Business Advisory</option>
+                    <option value="Training & Human Capital">Training &amp; Human Capital</option>
+                    <option value="ICT Services">ICT Services</option>
+                    <option value="Other">Other</option>
+                  </select>
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1.5">Message</label>
