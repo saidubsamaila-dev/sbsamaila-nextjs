@@ -1,9 +1,9 @@
 import Image from 'next/image'
-import { FileSearch, Calculator, BookCheck, Briefcase, GraduationCap, Monitor } from 'lucide-react'
+import { FileText, Calculator, BookCheck, Briefcase, GraduationCap, Monitor } from 'lucide-react'
 
 const coreServices = [
   {
-    icon: FileSearch,
+    icon: FileText,
     title: 'Audit & Assurance',
     description:
       'Independent statutory and internal audits that strengthen confidence in your financial reporting. Includes Global Audit (GAAP & ISA aligned), Public & Private Sector Audit, and Employee Benefit Plan Audit.',

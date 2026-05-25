@@ -7,11 +7,7 @@ const credentials = [
   },
   {
     title: 'Former Minister of State',
-    subtitle: 'Foreign Affairs, Federal Republic of Nigeria',
-  },
-  {
-    title: 'Former Minister of State',
-    subtitle: 'Interior, Federal Republic of Nigeria',
+    subtitle: 'Foreign Affairs & Interior, Federal Republic of Nigeria',
   },
   {
     title: 'Executive Banking Leadership',
