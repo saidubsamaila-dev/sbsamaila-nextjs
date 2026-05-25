@@ -5,12 +5,12 @@ import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
 
 const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Profile', href: '#profile' },
-  { label: 'Services', href: '#services' },
-  { label: 'Leadership', href: '#ministry' },
-  { label: 'Training', href: '#training' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About', href: '/#about' },
+  { label: 'Profile', href: '/#profile' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Leadership', href: '/#ministry' },
+  { label: 'Training', href: '/#training' },
+  { label: 'Contact', href: '/#contact' },
 ]
 
 export default function Navbar() {
@@ -86,9 +86,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="https://chamcodigital.com/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/chamco"
             className="bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-md text-center flex items-center justify-center gap-1.5"
             onClick={() => setMobileOpen(false)}
           >
@@ -96,7 +94,7 @@ export default function Navbar() {
             Chamco Digital
           </a>
           <a
-            href="#contact"
+            href="/#contact"
             className="bg-navy text-white text-sm font-semibold px-4 py-2 rounded-md text-center"
             onClick={() => setMobileOpen(false)}
           >

@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import Navbar from '@/components/Navbar'
 import {
   ArrowRight, Sparkles, Shield, Database, Cloud, Zap,
   Server, Monitor, GitMerge, Settings, CheckCircle, BookOpen,
@@ -136,8 +135,6 @@ const industries = [
 export default function ChamcoPage() {
   return (
     <main className="bg-[#0f1729] min-h-screen text-white">
-
-      <Navbar />
 
       {/* Flyer Hero — clickable image */}
       <section className="relative">
