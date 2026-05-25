@@ -7,12 +7,12 @@ const contactDetails = [
   {
     icon: Phone,
     label: 'Phone',
-    value: '+234 912 130 0300 · +234 912 310 0100',
+    value: '+234 946 961 1740 · +234 912 310 0100',
   },
   {
     icon: Globe,
     label: 'Website',
-    value: 'www.sbsamailaccountants.com',
+    value: 'www.sbsamailaaccountants.com',
   },
   {
     icon: Mail,
@@ -22,7 +22,7 @@ const contactDetails = [
   {
     icon: MapPin,
     label: 'Office',
-    value: '167 St. James House, Adetokunbo Ademola, Wuse 2, Abuja',
+    value: 'St. James House, Plot 167, Adetokunbo Ademola, Wuse 2, FCT, Abuja, Nigeria',
   },
 ]
 
@@ -77,6 +77,17 @@ export default function Contact() {
                 )
               })}
             </div>
+
+            {/* Training Contact */}
+            <div className="mt-10 bg-[#FAF9F6] rounded-xl border border-gray-100 p-6">
+              <p className="text-gold text-xs font-bold uppercase tracking-widest mb-3">
+                Training Enquiries (Chamco Digital)
+              </p>
+              <p className="text-gray-600 text-sm">1 Riverway, Suite 1700, Houston, TX 77056, USA</p>
+              <p className="text-gray-600 text-sm">training@chamco.ai</p>
+              <p className="text-gray-600 text-sm">888-556-7698</p>
+              <p className="text-gray-600 text-sm">www.chamcodigital.com/learning</p>
+            </div>
           </div>
 
           {/* Right — Form */}
@@ -107,9 +118,7 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                    Phone Number
-                  </label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Phone Number</label>
                   <input
                     type="tel"
                     name="phone"
@@ -120,9 +129,7 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                    Service Needed
-                  </label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Service Needed</label>
                   <input
                     type="text"
                     name="service"

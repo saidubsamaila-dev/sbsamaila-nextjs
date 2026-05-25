@@ -1,11 +1,47 @@
-import { Sparkles } from 'lucide-react'
+import { Sparkles, CheckCircle } from 'lucide-react'
+
+const willLearn = [
+  'Python programming & data analytics with NumPy, Pandas & Matplotlib',
+  'Azure AI fundamentals & Microsoft Foundry',
+  'Generative AI chat apps & prompt engineering',
+  'Retrieval-Augmented Generation (RAG) with Azure AI Search',
+  'AI Agents with tools, memory & knowledge sources',
+  'Multimodal, speech, vision & document intelligence solutions',
+  'Responsible AI: safety, evaluation, monitoring & governance',
+  'Design, deploy & scale enterprise AI solutions on Azure',
+]
+
+const willBuild = [
+  'AI Chat Applications & RAG-based Assistants',
+  'AI Agents with Tools, Knowledge & MCP Integrations',
+  'Document Extraction & Content Understanding',
+  'Speech-enabled & Multimodal Applications',
+  'End-to-End Enterprise AI Capstone Project',
+]
+
+const programStats = [
+  { value: '14', label: 'Weeks Total' },
+  { value: '2', label: 'Live Sessions/Week' },
+  { value: '28', label: 'Total Sessions' },
+  { value: '100%', label: 'Remote' },
+]
+
+const highlights = [
+  '28 Expert-led Live Sessions',
+  'Hands-on Labs & Real Projects',
+  'AI-103 Exam Preparation',
+  '4 Weeks Post-Course Mentoring',
+  'Industry Best Practices',
+  'Exam Voucher Included',
+]
 
 export default function Training() {
   return (
     <section id="training" className="bg-[#FAF9F6] py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-12">
+        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-14">
           <div className="flex-1 max-w-2xl">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 bg-gold rounded-xl flex items-center justify-center flex-shrink-0">
@@ -24,67 +60,109 @@ export default function Training() {
               enterprise-ready AI solutions.
             </p>
           </div>
-
-          {/* Partner badge */}
-          <div className="flex-shrink-0 flex items-center gap-4 bg-white rounded-xl border border-gray-100 shadow-sm px-6 py-4">
-            <div className="text-center">
-              <p className="text-navy font-bold text-xs leading-tight">OFFICE OF THE</p>
-              <p className="text-navy font-bold text-xs leading-tight">ACCOUNTANT GENERAL</p>
-              <p className="text-navy font-bold text-xs leading-tight">OF THE FEDERATION</p>
-            </div>
+          <div className="flex-shrink-0 bg-white rounded-xl border border-gray-100 shadow-sm px-6 py-4 text-center">
+            <p className="text-navy font-bold text-xs">OFFICE OF THE</p>
+            <p className="text-navy font-bold text-xs">ACCOUNTANT GENERAL</p>
+            <p className="text-navy font-bold text-xs">OF THE FEDERATION</p>
           </div>
         </div>
 
-        {/* Course Flyer Card */}
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden max-w-2xl mx-auto">
-          <div
-            className="aspect-[4/3] flex items-center justify-center"
-            style={{
-              background: 'linear-gradient(135deg, #0a0f2c 0%, #1a237e 40%, #0d47a1 100%)',
-            }}
-          >
-            <div className="text-center px-8">
-              <div className="text-gold text-xs font-bold tracking-widest uppercase mb-3">
-                14-Week Live, Online Bootcamp
-              </div>
-              <h3 className="text-white text-2xl font-extrabold mb-2">
-                AI-103: Developing AI Apps &amp; Agents on Azure
-              </h3>
-              <p className="text-blue-200 text-sm mb-6">
-                Data Analytics with Microsoft Generative and Agentic AI
-              </p>
-              <div className="grid grid-cols-3 gap-4 text-center mb-6">
-                <div>
-                  <p className="text-white font-bold text-lg">14</p>
-                  <p className="text-blue-300 text-xs">Weeks</p>
-                </div>
-                <div>
-                  <p className="text-white font-bold text-lg">28</p>
-                  <p className="text-blue-300 text-xs">Sessions</p>
-                </div>
-                <div>
-                  <p className="text-white font-bold text-lg">100%</p>
-                  <p className="text-blue-300 text-xs">Remote</p>
-                </div>
-              </div>
-              <div className="inline-block bg-gold text-white text-sm font-bold px-6 py-2 rounded-full">
-                Next Batch: June 23, 2026
-              </div>
+        {/* Stats Bar */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-14">
+          {programStats.map((s) => (
+            <div key={s.label} className="bg-white rounded-xl border border-gray-100 p-5 text-center shadow-sm">
+              <p className="text-3xl font-extrabold text-navy">{s.value}</p>
+              <p className="text-gray-500 text-xs mt-1">{s.label}</p>
             </div>
-          </div>
-          <div className="p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          ))}
+        </div>
+
+        {/* Market Stats */}
+        <div className="bg-navy rounded-2xl p-8 mb-14">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
             <div>
-              <p className="text-navy font-semibold text-sm">In partnership with</p>
-              <p className="text-gold font-bold">ChamcoDigital &amp; Microsoft</p>
+              <p className="text-3xl font-extrabold text-gold">78M</p>
+              <p className="text-gray-300 text-sm mt-1">New AI-related jobs by 2030</p>
+              <p className="text-gray-500 text-xs">World Economic Forum, 2025</p>
             </div>
-            <a
-              href="#contact"
-              className="bg-navy text-white font-semibold text-sm px-6 py-2.5 rounded-md hover:bg-navy-light transition-colors"
-            >
-              Enrol Now
-            </a>
+            <div>
+              <p className="text-3xl font-extrabold text-gold">$80K–$140K+</p>
+              <p className="text-gray-300 text-sm mt-1">Average salary for AI developer roles</p>
+              <p className="text-gray-500 text-xs">Glassdoor, 2024</p>
+            </div>
+            <div>
+              <p className="text-3xl font-extrabold text-gold">1,000+</p>
+              <p className="text-gray-300 text-sm mt-1">Learners trained &amp; empowered</p>
+              <p className="text-gray-500 text-xs">High success rate in certifications</p>
+            </div>
           </div>
         </div>
+
+        {/* Learn & Build */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-14">
+          {/* What You'll Learn */}
+          <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
+            <h3 className="text-navy font-extrabold text-lg mb-6">What You&apos;ll Learn</h3>
+            <ul className="space-y-3">
+              {willLearn.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <CheckCircle size={16} className="text-gold flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-600 text-sm leading-relaxed">{item}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* What You'll Build */}
+          <div className="flex flex-col gap-8">
+            <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
+              <h3 className="text-navy font-extrabold text-lg mb-6">What You&apos;ll Build</h3>
+              <ul className="space-y-3">
+                {willBuild.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckCircle size={16} className="text-gold flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-600 text-sm leading-relaxed">{item}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Curriculum Highlights */}
+            <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
+              <h3 className="text-navy font-extrabold text-lg mb-6">Curriculum Highlights</h3>
+              <ul className="space-y-3">
+                {highlights.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckCircle size={16} className="text-gold flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-600 text-sm">{item}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA Banner */}
+        <div className="bg-gold rounded-2xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div>
+            <p className="text-white text-xs font-bold uppercase tracking-widest mb-1">
+              Next Batch Starts — June 23, 2026
+            </p>
+            <h3 className="text-white text-2xl font-extrabold">
+              Take Control of Your Future
+            </h3>
+            <p className="text-white/80 text-sm mt-1">
+              14 weeks to a global AI career. Limited seats — register today!
+            </p>
+          </div>
+          <a
+            href="#contact"
+            className="flex-shrink-0 bg-white text-gold font-bold px-8 py-3 rounded-xl hover:bg-gray-50 transition-colors text-sm"
+          >
+            Enrol Now
+          </a>
+        </div>
+
       </div>
     </section>
   )
