@@ -5,6 +5,7 @@ import Profile from '@/components/Profile'
 import Services from '@/components/Services'
 import Leadership from '@/components/Leadership'
 import Training from '@/components/Training'
+import ChamcoBanner from '@/components/ChamcoBanner'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
@@ -18,6 +19,7 @@ export default function Home() {
       <Services />
       <Leadership />
       <Training />
+      <ChamcoBanner />
       <Contact />
       <Footer />
     </main>
