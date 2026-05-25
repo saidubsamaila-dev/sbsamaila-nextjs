@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import {
   ArrowRight, Sparkles, Shield, Database, Cloud, Zap,
@@ -138,15 +139,58 @@ export default function ChamcoPage() {
 
       <Navbar />
 
-      {/* Hero */}
-      <section className="relative py-24 lg:py-36 overflow-hidden">
+      {/* Flyer Hero — clickable image */}
+      <section className="relative">
+        <a
+          href="https://paystack.shop/pay/gz2msymxm0"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group block relative w-full cursor-pointer"
+          aria-label="Enrol and make payment for AI-103 program"
+        >
+          <div className="relative w-full" style={{ aspectRatio: '16/9', maxHeight: '90vh' }}>
+            <Image
+              src="https://www.sbsamailaaccountants.com/assets/ai-103-flyer-DpatebOm.jpg"
+              alt="AI-103: Developing AI Apps & Agents on Azure — Click to Enrol"
+              fill
+              className="object-cover object-top"
+              priority
+            />
+            {/* Gradient overlay at bottom */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0f1729] via-transparent to-transparent" />
+
+            {/* Hover overlay */}
+            <div className="absolute inset-0 bg-blue-900/0 group-hover:bg-blue-900/20 transition-all duration-300" />
+
+            {/* Clickable CTA badge — bottom center */}
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col sm:flex-row items-center gap-3">
+              <span className="inline-flex items-center gap-2 bg-green-600 group-hover:bg-green-500 text-white font-bold px-8 py-4 rounded-2xl shadow-2xl transition-all text-sm sm:text-base border-2 border-green-400/50">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M2 10H22" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+                ENROL NOW — Make Payment via Paystack
+                <ArrowRight size={18} />
+              </span>
+            </div>
+
+            {/* Click indicator — top right */}
+            <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full border border-white/20 group-hover:border-blue-400/60 transition-colors">
+              Click to Enrol &amp; Pay
+            </div>
+          </div>
+        </a>
+      </section>
+
+      {/* Hero text below flyer */}
+      <section className="relative py-16 lg:py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-20" style={{ background: 'radial-gradient(ellipse at 30% 50%, #3b82f6 0%, transparent 60%), radial-gradient(ellipse at 70% 20%, #8b5cf6 0%, transparent 50%)' }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 border border-blue-400/40 text-blue-400 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
             <Sparkles size={12} />
             In Collaboration with Saidu B. Samaila &amp; Co. · Microsoft Solutions Partner
           </div>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight mb-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
             REDEFINE WHAT IS{' '}
             <span className="text-blue-400">POSSIBLE</span>
           </h1>
@@ -156,15 +200,22 @@ export default function ChamcoPage() {
           <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed mb-8">
             AI &amp; Cloud Skills Development · Workforce Training 2026
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-3 text-sm font-bold text-blue-300 mb-10">
-            {['LEARN.', '</> BUILD.', 'DEPLOY.', 'LEAD.'].map((t) => (
-              <span key={t} className="bg-blue-600/20 border border-blue-500/30 px-4 py-2 rounded-lg">{t}</span>
-            ))}
-          </div>
           <div className="flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="https://paystack.shop/pay/gz2msymxm0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-green-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-green-700 transition-colors"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2 10H22" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
+              Make Payment — Enrol Now
+            </a>
             <a href="#ai103" className="inline-flex items-center gap-2 bg-blue-600 text-white font-semibold px-8 py-4 rounded-xl hover:bg-blue-700 transition-colors">
               <Sparkles size={18} />
-              Enrol in AI-103
+              View AI-103 Details
             </a>
             <a href="#programs" className="inline-flex items-center gap-2 border border-white/30 text-white font-semibold px-8 py-4 rounded-xl hover:border-white/60 transition-colors">
               All Programs <ArrowRight size={16} />
