@@ -1,41 +1,45 @@
+import Image from 'next/image'
+
+const stats = [
+  { value: '40+', label: 'Years of practice' },
+  { value: '200+', label: 'Clients served' },
+  { value: '100%', label: 'Compliance focus' },
+]
+
+const partners = [
+  {
+    name: 'ChamcoDigital',
+    src: 'https://www.sbsamailaaccountants.com/assets/chamco-logo-BHk3-6fy.jpg',
+  },
+  {
+    name: 'Office of the Accountant General',
+    src: 'https://www.sbsamailaaccountants.com/assets/oagf-logo-VL9U1IMu.jpg',
+  },
+  {
+    name: 'ITM Nigeria',
+    src: 'https://www.sbsamailaaccountants.com/assets/itm-logo-BU4MHfPO.jpeg',
+  },
+  {
+    name: 'Integra Africa',
+    src: 'https://www.sbsamailaaccountants.com/assets/integra-africa-logo-Dfd0uAIV.jpeg',
+  },
+]
+
 export default function About() {
-  const stats = [
-    { value: '40+', label: 'Years of practice' },
-    { value: '200+', label: 'Clients served' },
-    { value: '100%', label: 'Compliance focus' },
-  ]
-
-  const partners = [
-    { name: 'ChamcoDigital', abbr: 'CD' },
-    { name: 'Office of the Accountant General', abbr: 'OAG' },
-    { name: 'ITM', abbr: 'ITM' },
-    { name: 'Integra Africa', abbr: 'IA' },
-  ]
-
   return (
     <section id="about" className="bg-[#FAF9F6] py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* About Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left — Photo Card */}
-          <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden bg-gray-200 aspect-[4/5] max-w-sm mx-auto lg:mx-0">
-              {/* Placeholder image — replace with real photo */}
-              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-300 to-gray-400">
-                <div className="text-center text-gray-500">
-                  <div className="w-20 h-20 rounded-full bg-gray-300 mx-auto mb-2 flex items-center justify-center">
-                    <svg className="w-10 h-10 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path
-                        fillRule="evenodd"
-                        d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                  <p className="text-xs">Dr. Saidu Balarabe Samaila</p>
-                </div>
-              </div>
-
+          <div className="relative max-w-sm mx-auto lg:mx-0">
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/5]">
+              <Image
+                src="https://www.sbsamailaaccountants.com/assets/dr-portrait-BAPFkRQD.jpg"
+                alt="Dr. Saidu Balarabe Samaila"
+                fill
+                className="object-cover object-top"
+              />
               {/* Name card overlay */}
               <div className="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4">
                 <p className="text-navy font-bold text-sm">Dr. Saidu Balarabe Samaila</p>
@@ -88,9 +92,14 @@ export default function About() {
             {partners.map((p) => (
               <div
                 key={p.name}
-                className="flex items-center justify-center w-32 h-12 bg-white rounded-lg border border-gray-100 shadow-sm"
+                className="relative w-36 h-14 bg-white rounded-lg border border-gray-100 shadow-sm overflow-hidden flex items-center justify-center p-2"
               >
-                <span className="text-navy font-bold text-xs text-center px-2">{p.name}</span>
+                <Image
+                  src={p.src}
+                  alt={p.name}
+                  fill
+                  className="object-contain p-2"
+                />
               </div>
             ))}
           </div>

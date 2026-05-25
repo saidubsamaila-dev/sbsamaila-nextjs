@@ -1,22 +1,19 @@
 import { ArrowRight, ShieldCheck } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <section
-      id="home"
-      className="relative min-h-screen flex flex-col justify-center"
-      style={{
-        background: 'linear-gradient(135deg, #071018 0%, #0D1B2A 40%, #132338 70%, #0a1628 100%)',
-      }}
-    >
-      {/* Background overlay pattern */}
-      <div
-        className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage:
-            'radial-gradient(circle at 25% 50%, #C8920A 0%, transparent 50%), radial-gradient(circle at 75% 20%, #1a3550 0%, transparent 50%)',
-        }}
+    <section id="home" className="relative min-h-screen flex flex-col justify-center overflow-hidden">
+      {/* Background Image */}
+      <Image
+        src="https://www.sbsamailaaccountants.com/assets/hero-BunEgczy.jpg"
+        alt="Hero background"
+        fill
+        className="object-cover object-center"
+        priority
       />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-navy/80" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
         <div className="max-w-2xl">
@@ -62,7 +59,7 @@ export default function Hero() {
       </div>
 
       {/* Accreditation ticker */}
-      <div className="relative border-t border-white/10 bg-navy-dark/60 backdrop-blur-sm">
+      <div className="relative border-t border-white/10 bg-black/30 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12">
             {['ICAN', 'CITN', 'FRC NIGERIA', 'PUBLIC SECTOR ACCREDITED'].map((item, i) => (

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
 
 const navLinks = [
   { label: 'About', href: '#about' },
@@ -21,24 +22,13 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="flex-shrink-0">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="40" height="40" rx="6" fill="#0D1B2A" />
-                <path
-                  d="M20 6L8 13V27L20 34L32 27V13L20 6Z"
-                  stroke="white"
-                  strokeWidth="2"
-                  fill="none"
-                />
-                <path
-                  d="M20 10L12 15V25L20 30L28 25V15L20 10Z"
-                  stroke="white"
-                  strokeWidth="1.5"
-                  fill="none"
-                />
-                <path d="M16 20H24M20 16V24" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
-              </svg>
-            </div>
+            <Image
+              src="https://www.sbsamailaaccountants.com/assets/sbs-logo-CCtFOp74.jpg"
+              alt="Saidu B. Samaila & Co. Logo"
+              width={40}
+              height={40}
+              className="rounded-md object-contain"
+            />
             <div>
               <p className="text-navy font-bold text-sm leading-tight">Saidu B. Samaila &amp; Co.</p>
               <p className="text-gray-500 text-xs leading-tight">Chartered Accountants</p>
@@ -64,7 +54,7 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile menu toggle */}
+          {/* Mobile toggle */}
           <button
             className="md:hidden text-navy"
             onClick={() => setMobileOpen(!mobileOpen)}

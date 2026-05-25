@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Sparkles, CheckCircle } from 'lucide-react'
 
 const willLearn = [
@@ -19,13 +20,6 @@ const willBuild = [
   'End-to-End Enterprise AI Capstone Project',
 ]
 
-const programStats = [
-  { value: '14', label: 'Weeks Total' },
-  { value: '2', label: 'Live Sessions/Week' },
-  { value: '28', label: 'Total Sessions' },
-  { value: '100%', label: 'Remote' },
-]
-
 const highlights = [
   '28 Expert-led Live Sessions',
   'Hands-on Labs & Real Projects',
@@ -33,6 +27,13 @@ const highlights = [
   '4 Weeks Post-Course Mentoring',
   'Industry Best Practices',
   'Exam Voucher Included',
+]
+
+const programStats = [
+  { value: '14', label: 'Weeks Total' },
+  { value: '2', label: 'Live Sessions/Week' },
+  { value: '28', label: 'Total Sessions' },
+  { value: '100%', label: 'Remote' },
 ]
 
 export default function Training() {
@@ -60,14 +61,17 @@ export default function Training() {
               enterprise-ready AI solutions.
             </p>
           </div>
-          <div className="flex-shrink-0 bg-white rounded-xl border border-gray-100 shadow-sm px-6 py-4 text-center">
-            <p className="text-navy font-bold text-xs">OFFICE OF THE</p>
-            <p className="text-navy font-bold text-xs">ACCOUNTANT GENERAL</p>
-            <p className="text-navy font-bold text-xs">OF THE FEDERATION</p>
+          <div className="flex-shrink-0 relative w-16 h-16">
+            <Image
+              src="https://www.sbsamailaaccountants.com/assets/oagf-logo-VL9U1IMu.jpg"
+              alt="Office of the Accountant General"
+              fill
+              className="object-contain"
+            />
           </div>
         </div>
 
-        {/* Stats Bar */}
+        {/* Program Stats */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-14">
           {programStats.map((s) => (
             <div key={s.label} className="bg-white rounded-xl border border-gray-100 p-5 text-center shadow-sm">
@@ -75,6 +79,16 @@ export default function Training() {
               <p className="text-gray-500 text-xs mt-1">{s.label}</p>
             </div>
           ))}
+        </div>
+
+        {/* Flyer Image */}
+        <div className="relative w-full max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-lg mb-14 aspect-[3/4]">
+          <Image
+            src="https://www.sbsamailaaccountants.com/assets/ai-103-flyer-DpatebOm.jpg"
+            alt="AI-103: Developing AI Apps & Agents on Azure — Course Flyer"
+            fill
+            className="object-contain bg-white"
+          />
         </div>
 
         {/* Market Stats */}
@@ -98,9 +112,8 @@ export default function Training() {
           </div>
         </div>
 
-        {/* Learn & Build */}
+        {/* Learn & Build Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-14">
-          {/* What You'll Learn */}
           <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
             <h3 className="text-navy font-extrabold text-lg mb-6">What You&apos;ll Learn</h3>
             <ul className="space-y-3">
@@ -113,7 +126,6 @@ export default function Training() {
             </ul>
           </div>
 
-          {/* What You'll Build */}
           <div className="flex flex-col gap-8">
             <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
               <h3 className="text-navy font-extrabold text-lg mb-6">What You&apos;ll Build</h3>
@@ -127,7 +139,6 @@ export default function Training() {
               </ul>
             </div>
 
-            {/* Curriculum Highlights */}
             <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
               <h3 className="text-navy font-extrabold text-lg mb-6">Curriculum Highlights</h3>
               <ul className="space-y-3">
@@ -148,9 +159,7 @@ export default function Training() {
             <p className="text-white text-xs font-bold uppercase tracking-widest mb-1">
               Next Batch Starts — June 23, 2026
             </p>
-            <h3 className="text-white text-2xl font-extrabold">
-              Take Control of Your Future
-            </h3>
+            <h3 className="text-white text-2xl font-extrabold">Take Control of Your Future</h3>
             <p className="text-white/80 text-sm mt-1">
               14 weeks to a global AI career. Limited seats — register today!
             </p>

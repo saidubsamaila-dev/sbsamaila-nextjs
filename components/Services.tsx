@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { FileSearch, Calculator, BookCheck, Briefcase, GraduationCap, Monitor } from 'lucide-react'
 
 const coreServices = [
@@ -35,7 +36,7 @@ const coreServices = [
     icon: Monitor,
     title: 'ICT Services',
     description:
-      'Through partnerships with NewGenTeck IT Solutions and Automated System International (ASI): Security Engineering, IT Support, Forensics & Incident Response, Penetration Testing, SIEM & Threat Monitoring, and Enterprise Document Management (Laserfiche ECM).',
+      'Security Engineering, IT Support, Forensics & Incident Response, Penetration Testing, SIEM & Threat Monitoring, and Enterprise Document Management (Laserfiche ECM).',
   },
 ]
 
@@ -58,41 +59,49 @@ const trackRecord = [
     client: 'Nigerian Airspace Management Agency (NAMA)',
     title: 'Quality Assurance in Nigerian Air Traffic Management',
     location: 'Kigali, Rwanda • May 2025',
+    img: 'https://www.sbsamailaaccountants.com/assets/project-nama-rwanda-LuWgyUtc.jpeg',
   },
   {
     client: 'Nigerian Airspace Management Agency (NAMA)',
-    title: 'Revenue Collection, Accounting & Expenditure Control in Airspace Management',
-    location: 'Senior Executive Management • Kaduna 2025',
+    title: 'Revenue Collection, Accounting & Expenditure Control',
+    location: 'Kaduna 2025',
+    img: 'https://www.sbsamailaaccountants.com/assets/project-nama-kaduna-revenue-BOPLcxc8.jpeg',
   },
   {
     client: 'Nigerian Airspace Management Agency (NAMA)',
     title: 'Understanding the Challenging World of the Aviation Sector',
-    location: 'Senior Executive Management • Keffi 2025',
+    location: 'Keffi 2025',
+    img: 'https://www.sbsamailaaccountants.com/assets/project-nama-keffi-BCyzhzbp.jpeg',
   },
   {
     client: 'Federal Mortgage Bank of Nigeria (FMBN)',
     title: 'Enhancing Organizational Productivity through Performance Management',
-    location: 'Kaduna • September 8–11, 2025',
+    location: 'Kaduna • September 2025',
+    img: 'https://www.sbsamailaaccountants.com/assets/project-fmbn-Bmqs7-g3.jpeg',
   },
   {
     client: 'TAJ Bank',
     title: 'Selling and Negotiation Skills in Specialized Financial Situations',
     location: 'Maiduguri • 2025',
+    img: 'https://www.sbsamailaaccountants.com/assets/project-tajbank-DROPyoJu.jpeg',
   },
   {
     client: 'Oil and Gas Free Zones Authority (OGFZA)',
     title: 'Enhancing Organizational Productivity through Performance Management Systems',
     location: 'Yola 2025',
+    img: 'https://www.sbsamailaaccountants.com/assets/project-ogfza-yola-B8Wp-fjS.jpeg',
   },
   {
     client: 'Federal Mortgage Bank of Nigeria (FMBN)',
     title: 'Mortgage Financing in Nigeria: Prospects and Challenges',
     location: 'Kaduna • 2022 & 2023',
+    img: 'https://www.sbsamailaaccountants.com/assets/project-fmbn-prospects-BB5zJJmD.jpeg',
   },
   {
     client: 'Oil and Gas Free Zones Authority (OGFZA)',
     title: 'Administrative Procedures and Overview of Public Service Rules',
     location: 'Abuja • 2024',
+    img: 'https://www.sbsamailaaccountants.com/assets/project-ogfza-abuja-89_0YiOl.jpeg',
   },
 ]
 
@@ -128,14 +137,13 @@ export default function Services() {
           })}
         </div>
 
-        {/* Laserfiche ECM Deployments */}
+        {/* Laserfiche Deployments */}
         <div className="bg-white rounded-2xl border border-gray-100 p-8 mb-12">
           <h3 className="text-xl font-extrabold text-navy mb-2">
             Laserfiche ECM — Notable Deployments
           </h3>
           <p className="text-gray-500 text-sm mb-6">
-            Enterprise Document &amp; Records Management solutions deployed across key Federal
-            institutions.
+            Enterprise Document &amp; Records Management solutions deployed across key Federal institutions.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {laserficheDeployments.map((d) => (
@@ -147,22 +155,32 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Track Record */}
+        {/* Track Record with Images */}
         <div>
           <h3 className="text-2xl font-extrabold text-navy mb-8">
             Track Record — Selected Engagements
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {trackRecord.map((t, i) => (
               <div
                 key={i}
-                className="bg-white rounded-xl border border-gray-100 p-5 hover:shadow-sm transition-shadow"
+                className="bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-md transition-shadow"
               >
-                <p className="text-gold text-xs font-bold uppercase tracking-wide mb-1">
-                  {t.client}
-                </p>
-                <p className="text-navy font-semibold text-sm mb-2">{t.title}</p>
-                <p className="text-gray-400 text-xs">{t.location}</p>
+                <div className="relative h-40 w-full">
+                  <Image
+                    src={t.img}
+                    alt={t.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-4">
+                  <p className="text-gold text-xs font-bold uppercase tracking-wide mb-1 leading-tight">
+                    {t.client}
+                  </p>
+                  <p className="text-navy font-semibold text-sm mb-1 leading-snug">{t.title}</p>
+                  <p className="text-gray-400 text-xs">{t.location}</p>
+                </div>
               </div>
             ))}
           </div>
