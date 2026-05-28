@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from 'react'
 import Image from 'next/image'
 
 const stats = [
@@ -8,12 +11,12 @@ const stats = [
 
 const partners = [
   {
-    name: 'ChamcoDigital',
-    src: 'https://www.sbsamailaaccountants.com/assets/chamco-logo-BHk3-6fy.jpg',
-  },
-  {
     name: 'Office of the Accountant General',
     src: 'https://www.sbsamailaaccountants.com/assets/oagf-logo-VL9U1IMu.jpg',
+  },
+  {
+    name: 'Chamco Digital',
+    src: 'https://www.sbsamailaaccountants.com/assets/chamco-logo-BHk3-6fy.jpg',
   },
   {
     name: 'ITM Nigeria',
@@ -24,6 +27,31 @@ const partners = [
     src: 'https://www.sbsamailaaccountants.com/assets/integra-africa-logo-Dfd0uAIV.jpeg',
   },
 ]
+
+function PartnerLogo({ name, src }: { name: string; src: string }) {
+  const [error, setError] = useState(false)
+
+  return (
+    <div className="w-36 h-14 bg-white rounded-lg border border-gray-100 shadow-sm flex items-center justify-center p-2 overflow-hidden">
+      {error ? (
+        <span className="text-xs font-semibold text-gray-500 text-center leading-tight px-1">
+          {name}
+        </span>
+      ) : (
+        <div className="relative w-full h-full">
+          <Image
+            src={src}
+            alt={name}
+            fill
+            sizes="144px"
+            className="object-contain"
+            onError={() => setError(true)}
+          />
+        </div>
+      )}
+    </div>
+  )
+}
 
 export default function About() {
   return (
@@ -41,7 +69,6 @@ export default function About() {
                 sizes="(max-width: 768px) 90vw, 384px"
                 className="object-cover object-top"
               />
-              {/* Name card overlay */}
               <div className="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4">
                 <p className="text-navy font-bold text-sm">Dr. Saidu Balarabe Samaila</p>
                 <p className="text-gray-500 text-xs mt-0.5">
@@ -91,18 +118,7 @@ export default function About() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-16">
             {partners.map((p) => (
-              <div
-                key={p.name}
-                className="relative w-36 h-14 bg-white rounded-lg border border-gray-100 shadow-sm overflow-hidden flex items-center justify-center p-2"
-              >
-                <Image
-                  src={p.src}
-                  alt={p.name}
-                  fill
-                  sizes="144px"
-                  className="object-contain p-2"
-                />
-              </div>
+              <PartnerLogo key={p.name} name={p.name} src={p.src} />
             ))}
           </div>
         </div>
