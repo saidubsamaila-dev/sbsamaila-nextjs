@@ -38,7 +38,7 @@ const programStats = [
 
 export default function Training() {
   return (
-    <section id="training" className="bg-[#FAF9F6] py-20 lg:py-28 scroll-mt-16">
+    <section id="training" className="bg-[#FAF9F6] py-20 lg:py-28 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}

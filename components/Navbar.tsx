@@ -8,7 +8,7 @@ import Image from 'next/image'
 
 const navLinks = [
   { label: 'About',      id: 'about' },
-  { label: 'Profile',    id: 'profile' },
+  { label: 'Profile',    id: 'about' },
   { label: 'Services',   id: 'services' },
   { label: 'Leadership', id: 'ministry' },
   { label: 'Training',   id: 'training' },
