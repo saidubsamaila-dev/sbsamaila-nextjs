@@ -114,7 +114,7 @@ const facilitators = [
 
 export default function Leadership() {
   return (
-    <section id="ministry" className="py-20 lg:py-28" style={{ background: 'linear-gradient(135deg, #0D1B2A 0%, #132338 100%)' }}>
+    <section id="ministry" className="py-20 lg:py-28 scroll-mt-16" style={{ background: 'linear-gradient(135deg, #0D1B2A 0%, #132338 100%)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Principal Partner */}

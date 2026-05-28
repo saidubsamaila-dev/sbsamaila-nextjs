@@ -17,6 +17,7 @@ interface CallbackRecord {
 const statusColors: Record<string, string> = {
   pending:   'bg-yellow-100 text-yellow-800 border-yellow-200',
   contacted: 'bg-blue-100 text-blue-800 border-blue-200',
+  enrolled:  'bg-purple-100 text-purple-800 border-purple-200',
   resolved:  'bg-green-100 text-green-800 border-green-200',
 }
 
@@ -52,6 +53,7 @@ export default function AdminCallbacks() {
     total: records.length,
     pending: records.filter((r) => r.status === 'pending').length,
     contacted: records.filter((r) => r.status === 'contacted').length,
+    enrolled: records.filter((r) => r.status === 'enrolled').length,
     resolved: records.filter((r) => r.status === 'resolved').length,
   }
 
@@ -71,11 +73,12 @@ export default function AdminCallbacks() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
         {/* Summary Cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 mb-8">
           {[
             { label: 'Total', value: counts.total, color: 'bg-gray-900 text-white' },
             { label: 'Pending', value: counts.pending, color: 'bg-yellow-50 text-yellow-800 border border-yellow-200' },
             { label: 'Contacted', value: counts.contacted, color: 'bg-blue-50 text-blue-800 border border-blue-200' },
+            { label: 'Enrolled', value: counts.enrolled, color: 'bg-purple-50 text-purple-800 border border-purple-200' },
             { label: 'Resolved', value: counts.resolved, color: 'bg-green-50 text-green-800 border border-green-200' },
           ].map((c) => (
             <div key={c.label} className={`rounded-xl p-5 ${c.color}`}>
@@ -139,6 +142,7 @@ export default function AdminCallbacks() {
                         >
                           <option value="pending">Pending</option>
                           <option value="contacted">Contacted</option>
+                          <option value="enrolled">Enrolled</option>
                           <option value="resolved">Resolved</option>
                         </select>
                       </td>

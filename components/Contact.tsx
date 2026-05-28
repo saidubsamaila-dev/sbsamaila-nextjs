@@ -42,7 +42,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-white py-20 lg:py-28">
+    <section id="contact" className="bg-white py-20 lg:py-28 scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
@@ -155,6 +155,7 @@ export default function Contact() {
                     <option value="Accounting & Bookkeeping">Accounting &amp; Bookkeeping</option>
                     <option value="Business Advisory">Business Advisory</option>
                     <option value="Training & Human Capital">Training &amp; Human Capital</option>
+                    <option value="AI-103 Training">AI-103 Training (Chamco Digital)</option>
                     <option value="ICT Services">ICT Services</option>
                     <option value="Other">Other</option>
                   </select>

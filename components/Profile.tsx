@@ -244,7 +244,7 @@ export default function Profile() {
   const [selectedMember, setSelectedMember] = useState<TeamMemberProfile | null>(null)
 
   return (
-    <section id="profile" className="bg-white py-20 lg:py-28">
+    <section id="profile" className="bg-white py-20 lg:py-28 scroll-mt-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
