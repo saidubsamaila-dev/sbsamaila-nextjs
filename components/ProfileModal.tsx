@@ -9,6 +9,7 @@ export interface TeamMemberProfile {
   title: string
   bio: string
   executiveSummary: string
+  image?: string
 }
 
 export default function ProfileModal({

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import {
   BookOpen, Building2, Eye, Target, Star, GraduationCap,
   FileText, Calculator, Monitor, ShieldCheck, Handshake, Users, Award,
@@ -109,6 +110,7 @@ const teamMembers: TeamMemberProfile[] = [
     credentials: 'BSC, MBA, ACA, FCA, ACTI, AMNIM, FCTI, FIMC, FNITD',
     title: 'Principal Partner — Former Honourable Minister of State, Foreign Affairs; Former Minister of State, Interior; and Former Minister of Sports and Social Development, Federal Republic of Nigeria.',
     bio: 'Principal Partner — Former Honourable Minister of State, Foreign Affairs; Former Minister of State, Interior; and Former Minister of Sports and Social Development.',
+    image: 'https://www.sbsamailaaccountants.com/assets/dr-portrait-BAPFkRQD.jpg',
     executiveSummary: `Dr. Saidu Balarabe Samaila is a prominent Chartered Accountant, Chartered Tax Expert, Management Consultant, Experienced Banker, Financial Planner and Strategist, Politician, Diplomat, Experienced Administrator, team player and a very patriotic Nigerian and African.
 
 He has served Nigeria as Hon. Minister of State in the Ministry of Foreign Affairs, Hon. Minister of State in the Ministry of Interior, and Hon. Minister of Sports and Social Development — all cabinet-level positions. In these roles, he met and worked with world leaders including Her Late Royal Majesty Queen Elizabeth II, Prime Ministers of Japan, Australia, and the United Kingdom, and Presidents of Germany, South Africa, Ghana, Rwanda, and others, helping restore democracy in Guinea Bissau, Sao Tome and Principe, and Liberia.
@@ -457,18 +459,31 @@ export default function Profile() {
         <SectionBlock icon={Users} title="Key Team Members">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {teamMembers.map((m) => (
-              <div key={m.name} className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
-                <p className="text-navy font-bold text-sm">{m.name}</p>
-                <p className="text-gold text-xs font-semibold uppercase tracking-wide mt-0.5">
-                  {m.credentials}
-                </p>
-                <p className="text-gray-500 text-xs leading-relaxed mt-2 mb-3">{m.bio}</p>
-                <button
-                  onClick={() => setSelectedMember(m)}
-                  className="text-gold text-xs font-semibold hover:underline flex items-center gap-1"
-                >
-                  Read profile →
-                </button>
+              <div key={m.name} className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                {m.image && (
+                  <div className="relative w-full h-52">
+                    <Image
+                      src={m.image}
+                      alt={m.name}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      className="object-cover object-top"
+                    />
+                  </div>
+                )}
+                <div className="p-5">
+                  <p className="text-navy font-bold text-sm">{m.name}</p>
+                  <p className="text-gold text-xs font-semibold uppercase tracking-wide mt-0.5">
+                    {m.credentials}
+                  </p>
+                  <p className="text-gray-500 text-xs leading-relaxed mt-2 mb-3">{m.bio}</p>
+                  <button
+                    onClick={() => setSelectedMember(m)}
+                    className="text-gold text-xs font-semibold hover:underline flex items-center gap-1"
+                  >
+                    Read profile →
+                  </button>
+                </div>
               </div>
             ))}
           </div>
