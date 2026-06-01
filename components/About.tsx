@@ -63,7 +63,7 @@ export default function About() {
           <div className="relative max-w-sm mx-auto lg:mx-0">
             <div className="relative rounded-2xl overflow-hidden aspect-[4/5]">
               <Image
-                src="https://www.sbsamailaaccountants.com/assets/dr-portrait-BAPFkRQD.jpg"
+                src="/dr-saidu-portrait.jpg"
                 alt="Dr. Saidu Balarabe Samaila"
                 fill
                 sizes="(max-width: 768px) 90vw, 384px"

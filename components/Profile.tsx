@@ -110,7 +110,7 @@ const teamMembers: TeamMemberProfile[] = [
     credentials: 'BSC, MBA, ACA, FCA, ACTI, AMNIM, FCTI, FIMC, FNITD',
     title: 'Principal Partner — Former Honourable Minister of State, Foreign Affairs; Former Minister of State, Interior; and Former Minister of Sports and Social Development, Federal Republic of Nigeria.',
     bio: 'Principal Partner — Former Honourable Minister of State, Foreign Affairs; Former Minister of State, Interior; and Former Minister of Sports and Social Development.',
-    image: 'https://www.sbsamailaaccountants.com/assets/dr-portrait-BAPFkRQD.jpg',
+    image: '/dr-saidu-portrait.jpg',
     executiveSummary: `Dr. Saidu Balarabe Samaila is a prominent Chartered Accountant, Chartered Tax Expert, Management Consultant, Experienced Banker, Financial Planner and Strategist, Politician, Diplomat, Experienced Administrator, team player and a very patriotic Nigerian and African.
 
 He has served Nigeria as Hon. Minister of State in the Ministry of Foreign Affairs, Hon. Minister of State in the Ministry of Interior, and Hon. Minister of Sports and Social Development — all cabinet-level positions. In these roles, he met and worked with world leaders including Her Late Royal Majesty Queen Elizabeth II, Prime Ministers of Japan, Australia, and the United Kingdom, and Presidents of Germany, South Africa, Ghana, Rwanda, and others, helping restore democracy in Guinea Bissau, Sao Tome and Principe, and Liberia.
