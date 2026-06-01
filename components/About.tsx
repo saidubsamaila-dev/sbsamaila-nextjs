@@ -61,16 +61,16 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left — Photo Card */}
           <div className="max-w-sm mx-auto lg:mx-0">
-            <div className="relative rounded-2xl overflow-hidden">
+            <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
               <Image
                 src="/dr-saidu-portrait.jpg"
                 alt="Dr. Saidu Balarabe Samaila"
                 width={400}
-                height={500}
-                className="w-full h-auto object-cover object-top"
+                height={400}
+                className="w-full h-auto block"
                 priority
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4">
+              <div className="bg-white px-4 py-4 border-t border-gray-100">
                 <p className="text-navy font-bold text-sm">Dr. Saidu Balarabe Samaila</p>
                 <p className="text-gray-500 text-xs mt-0.5">
                   BSC, MBA, ACA, FCA, ACTI, AMNIM, FCTI, FIMC, FNITD

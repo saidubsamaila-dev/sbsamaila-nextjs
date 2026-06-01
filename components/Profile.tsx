@@ -465,8 +465,8 @@ export default function Profile() {
                     src={m.image}
                     alt={m.name}
                     width={400}
-                    height={300}
-                    className="w-full h-auto object-cover object-top"
+                    height={400}
+                    className="w-full h-auto block"
                     priority
                   />
                 )}
