@@ -461,15 +461,14 @@ export default function Profile() {
             {teamMembers.map((m) => (
               <div key={m.name} className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
                 {m.image && (
-                  <div className="relative w-full h-52">
-                    <Image
-                      src={m.image}
-                      alt={m.name}
-                      fill
-                      sizes="(max-width: 640px) 100vw, 50vw"
-                      className="object-cover object-top"
-                    />
-                  </div>
+                  <Image
+                    src={m.image}
+                    alt={m.name}
+                    width={400}
+                    height={300}
+                    className="w-full h-auto object-cover object-top"
+                    priority
+                  />
                 )}
                 <div className="p-5">
                   <p className="text-navy font-bold text-sm">{m.name}</p>

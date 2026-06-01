@@ -60,14 +60,15 @@ export default function About() {
         {/* About Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left — Photo Card */}
-          <div className="relative max-w-sm mx-auto lg:mx-0">
-            <div className="relative rounded-2xl overflow-hidden aspect-[4/5]">
+          <div className="max-w-sm mx-auto lg:mx-0">
+            <div className="relative rounded-2xl overflow-hidden">
               <Image
                 src="/dr-saidu-portrait.jpg"
                 alt="Dr. Saidu Balarabe Samaila"
-                fill
-                sizes="(max-width: 768px) 90vw, 384px"
-                className="object-cover object-top"
+                width={400}
+                height={500}
+                className="w-full h-auto object-cover object-top"
+                priority
               />
               <div className="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4">
                 <p className="text-navy font-bold text-sm">Dr. Saidu Balarabe Samaila</p>
