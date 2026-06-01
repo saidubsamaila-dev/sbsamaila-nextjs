@@ -62,13 +62,11 @@ export default function About() {
           {/* Left — Photo Card */}
           <div className="max-w-sm mx-auto lg:mx-0">
             <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src="/dr-saidu-portrait.jpg"
                 alt="Dr. Saidu Balarabe Samaila"
-                width={400}
-                height={400}
                 className="w-full h-auto block"
-                priority
               />
               <div className="bg-white px-4 py-4 border-t border-gray-100">
                 <p className="text-navy font-bold text-sm">Dr. Saidu Balarabe Samaila</p>

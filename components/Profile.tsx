@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import {
   BookOpen, Building2, Eye, Target, Star, GraduationCap,
   FileText, Calculator, Monitor, ShieldCheck, Handshake, Users, Award,
@@ -461,13 +460,11 @@ export default function Profile() {
             {teamMembers.map((m) => (
               <div key={m.name} className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
                 {m.image && (
-                  <Image
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
                     src={m.image}
                     alt={m.name}
-                    width={400}
-                    height={400}
                     className="w-full h-auto block"
-                    priority
                   />
                 )}
                 <div className="p-5">
