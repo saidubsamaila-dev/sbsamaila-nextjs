@@ -179,6 +179,67 @@ export default function ChamcoPage() {
         </a>
       </section>
 
+      {/* Partnership Badge */}
+      <section className="bg-gradient-to-r from-[#0f1729] via-[#1a2540] to-[#0f1729] border-y border-blue-500/30 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            {/* Left: logos + title */}
+            <div className="flex flex-col sm:flex-row items-center gap-5">
+              {/* SBS badge */}
+              <div className="flex items-center gap-2">
+                <div className="w-10 h-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center flex-shrink-0">
+                  <svg width="22" height="22" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 4L6 12V28L20 36L34 28V12L20 4Z" stroke="white" strokeWidth="2.5" fill="none"/>
+                    <path d="M16 20H24M20 16V24" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <div className="leading-tight">
+                  <p className="text-white font-bold text-xs">Saidu B. Samaila &amp; Co.</p>
+                  <p className="text-gray-400 text-[10px]">Chartered Accountants</p>
+                </div>
+              </div>
+
+              <div className="hidden sm:flex items-center text-blue-400/60 font-bold text-lg select-none">×</div>
+
+              {/* Chamco badge */}
+              <div className="flex items-center gap-2">
+                <div className="w-10 h-10 rounded-lg bg-blue-600/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0">
+                  <Sparkles size={18} className="text-blue-400" />
+                </div>
+                <div className="leading-tight">
+                  <p className="text-blue-400 font-bold text-xs">Chamco Digital LLC</p>
+                  <p className="text-gray-400 text-[10px]">Microsoft Solutions Partner</p>
+                </div>
+              </div>
+
+              {/* Divider */}
+              <div className="hidden sm:block w-px h-10 bg-white/10" />
+
+              {/* Partnership label */}
+              <div className="text-center sm:text-left">
+                <p className="text-white font-extrabold text-sm tracking-wide">Official Partnership — 2026</p>
+                <p className="text-blue-400 text-[11px] font-semibold tracking-widest uppercase">AI &amp; Digital Skills Empowerment</p>
+              </div>
+            </div>
+
+            {/* Right: download PDF */}
+            <a
+              href="/chamco-partnership.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 inline-flex items-center gap-2 bg-blue-600/20 hover:bg-blue-600/40 border border-blue-500/40 text-blue-300 hover:text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition-all"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <polyline points="7,10 12,15 17,10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <line x1="12" y1="15" x2="12" y2="3" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
+              Download Partnership Brief
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Hero text below flyer */}
       <section className="relative py-16 lg:py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-20" style={{ background: 'radial-gradient(ellipse at 30% 50%, #3b82f6 0%, transparent 60%), radial-gradient(ellipse at 70% 20%, #8b5cf6 0%, transparent 50%)' }} />
@@ -832,15 +893,45 @@ export default function ChamcoPage() {
 
       {/* Footer */}
       <footer className="border-t border-white/10 bg-[#0a1020] py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <Sparkles size={16} className="text-blue-400" />
-            <span className="text-white font-bold">Chamco<span className="text-blue-400">Digital</span></span>
-            <span className="text-gray-600 text-xs ml-2">· In collaboration with Saidu B. Samaila &amp; Co. · ©2026 All rights reserved.</span>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Partnership strip */}
+          <div className="flex flex-wrap items-center justify-center gap-4 mb-8 pb-8 border-b border-white/10">
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded bg-white/10 flex items-center justify-center">
+                <svg width="15" height="15" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 4L6 12V28L20 36L34 28V12L20 4Z" stroke="white" strokeWidth="2.5" fill="none"/>
+                  <path d="M16 20H24M20 16V24" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              </div>
+              <span className="text-white text-xs font-bold">Saidu B. Samaila &amp; Co.</span>
+            </div>
+            <span className="text-blue-400/50 font-bold">×</span>
+            <div className="flex items-center gap-2">
+              <Sparkles size={13} className="text-blue-400" />
+              <span className="text-blue-400 text-xs font-bold">Chamco Digital</span>
+            </div>
+            <span className="text-gray-600 text-xs">·</span>
+            <span className="text-gray-400 text-xs">AI &amp; Digital Skills Empowerment Partnership 2026</span>
+            <span className="text-gray-600 text-xs">·</span>
+            <a
+              href="/chamco-partnership.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 text-xs underline underline-offset-2 transition-colors"
+            >
+              Partnership Brief ↓
+            </a>
           </div>
-          <Link href="/" className="text-gray-400 hover:text-white text-sm transition-colors">
-            ← Back to Saidu B. Samaila &amp; Co.
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-2">
+              <Sparkles size={16} className="text-blue-400" />
+              <span className="text-white font-bold">Chamco<span className="text-blue-400">Digital</span></span>
+              <span className="text-gray-600 text-xs ml-2">· In collaboration with Saidu B. Samaila &amp; Co. · ©2026 All rights reserved.</span>
+            </div>
+            <Link href="/" className="text-gray-400 hover:text-white text-sm transition-colors">
+              ← Back to Saidu B. Samaila &amp; Co.
+            </Link>
+          </div>
         </div>
       </footer>
 
