@@ -106,9 +106,9 @@ const facilitators = [
     note: 'Accredited member of ICAN and CITN. Notable workshops for NCAA and Federal Ministry of Power.',
   },
   {
-    name: 'Vimbai Kadenhe',
-    title: 'Director of Operations, Integra Africa',
-    note: 'Based in Johannesburg, South Africa. Specialist in event management, market research and leadership.',
+    name: 'Dr. Tendai Kadenhe Mhizha',
+    title: 'Chief Advisor, AllAfrica Global Media | Founder, Integra Africa & Research Bureau International',
+    note: 'PhD, University of Derby. Board-level strategic consultant, serial entrepreneur, MBA lecturer at GIBS Johannesburg. Entrepreneur of the Year, Zimbabwe 2004. Specialist in African disinformation, market research, and organisational strategy across 30+ years.',
   },
 ]
 
