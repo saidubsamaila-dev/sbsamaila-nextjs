@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import {
   ArrowRight, Sparkles, Shield, Database, Cloud, Zap,
   Server, Monitor, GitMerge, Settings, CheckCircle, BookOpen,
@@ -136,47 +135,39 @@ export default function ChamcoPage() {
   return (
     <main className="bg-[#0f1729] min-h-screen text-white">
 
-      {/* Flyer Hero — clickable image */}
-      <section className="relative">
-        <a
-          href="https://paystack.shop/pay/gz2msymxm0"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group block relative w-full cursor-pointer"
-          aria-label="Enrol and make payment for AI-103 program"
-        >
-          <div className="relative w-full" style={{ aspectRatio: '16/9', maxHeight: '90vh' }}>
-            <Image
-              src="https://www.sbsamailaaccountants.com/assets/ai-103-flyer-DpatebOm.jpg"
-              alt="AI-103: Developing AI Apps & Agents on Azure — Click to Enrol"
-              fill
-              className="object-cover object-top"
-              priority
-            />
-            {/* Gradient overlay at bottom */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0f1729] via-transparent to-transparent" />
+      {/* Video Hero */}
+      <section className="relative w-full bg-black">
+        <div className="relative w-full" style={{ maxHeight: '90vh', overflow: 'hidden' }}>
+          {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+          <video
+            src="/chamco-partnership.mp4"
+            autoPlay
+            muted
+            playsInline
+            loop
+            className="w-full block"
+            style={{ maxHeight: '90vh', objectFit: 'cover' }}
+          />
+          {/* Bottom gradient to blend into page */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0f1729] via-transparent to-transparent pointer-events-none" />
 
-            {/* Hover overlay */}
-            <div className="absolute inset-0 bg-blue-900/0 group-hover:bg-blue-900/20 transition-all duration-300" />
-
-            {/* Clickable CTA badge — bottom center */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col sm:flex-row items-center gap-3">
-              <span className="inline-flex items-center gap-2 bg-green-600 group-hover:bg-green-500 text-white font-bold px-8 py-4 rounded-2xl shadow-2xl transition-all text-sm sm:text-base border-2 border-green-400/50">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M2 10H22" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
-                ENROL NOW — Make Payment via Paystack
-                <ArrowRight size={18} />
-              </span>
-            </div>
-
-            {/* Click indicator — top right */}
-            <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full border border-white/20 group-hover:border-blue-400/60 transition-colors">
-              Click to Enrol &amp; Pay
-            </div>
+          {/* Enrol CTA overlay — bottom center */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-full flex justify-center px-4">
+            <a
+              href="https://paystack.shop/pay/gz2msymxm0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white font-bold px-8 py-4 rounded-2xl shadow-2xl transition-all text-sm sm:text-base border-2 border-green-400/50"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2 10H22" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
+              ENROL NOW — Make Payment via Paystack
+              <ArrowRight size={18} />
+            </a>
           </div>
-        </a>
+        </div>
       </section>
 
       {/* Partnership Badge */}
