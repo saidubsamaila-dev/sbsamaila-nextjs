@@ -1,12 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ArrowRight, Loader2, CheckCircle, Shield, Tag } from 'lucide-react'
 
 const PROGRAMS = [
-  { value: 'AI-103: Azure AI Apps & Agents Developer (14 Weeks)', label: 'AI-103: Azure AI Apps & Agents Developer — 14 Weeks' },
-  { value: 'Microsoft 365 Copilot Training', label: 'Microsoft 365 Copilot Training' },
-  { value: 'AI+ Workforce Enablement Program', label: 'AI+ Workforce Enablement Program' },
+  'AI-103: Azure AI Apps & Agents Developer (14 Weeks)',
+  'Microsoft 365 Copilot Training',
+  'AI+ Workforce Enablement Program',
 ]
 
 const BATCH = 'June 23, 2026'
@@ -16,15 +16,26 @@ export default function ChamcoEnrollForm() {
     firstName: '',
     lastName: '',
     email: '',
-    program: PROGRAMS[0].value,
+    program: PROGRAMS[0],
     discountCode: '',
   })
+  const [prices, setPrices] = useState<Record<string, string>>({})
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+
+  // Fetch per-program prices from server
+  useEffect(() => {
+    fetch('/api/paystack/initialize')
+      .then(r => r.json())
+      .then(setPrices)
+      .catch(() => {})
+  }, [])
 
   function update(field: keyof typeof form, value: string) {
     setForm(f => ({ ...f, [field]: value }))
   }
+
+  const currentPrice = prices[form.program]
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -118,10 +129,10 @@ export default function ChamcoEnrollForm() {
                 placeholder="you@example.com"
                 className="w-full bg-white/5 border border-white/20 text-white placeholder-gray-600 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-colors"
               />
-              <p className="text-gray-500 text-xs mt-1">Your confirmation will be sent to this email</p>
+              <p className="text-gray-500 text-xs mt-1">Confirmation will be sent to this email</p>
             </div>
 
-            {/* Program */}
+            {/* Program + price */}
             <div>
               <label className="block text-gray-400 text-xs font-bold uppercase tracking-widest mb-2">Program</label>
               <select
@@ -130,9 +141,16 @@ export default function ChamcoEnrollForm() {
                 className="w-full bg-[#0f1729] border border-white/20 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-colors"
               >
                 {PROGRAMS.map(p => (
-                  <option key={p.value} value={p.value}>{p.label}</option>
+                  <option key={p} value={p}>{p}</option>
                 ))}
               </select>
+              {/* Price display */}
+              {currentPrice && (
+                <div className="mt-2 flex items-center justify-between bg-blue-600/10 border border-blue-500/20 rounded-lg px-4 py-2.5">
+                  <span className="text-gray-400 text-xs">Program fee</span>
+                  <span className="text-blue-400 font-extrabold text-lg">{currentPrice}</span>
+                </div>
+              )}
             </div>
 
             {/* Discount code */}
@@ -176,14 +194,14 @@ export default function ChamcoEnrollForm() {
                     <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M2 10H22" stroke="white" strokeWidth="2" strokeLinecap="round"/>
                   </svg>
-                  Proceed to Secure Payment
+                  {currentPrice ? `Pay ${currentPrice} · Proceed to Paystack` : 'Proceed to Secure Payment'}
                   <ArrowRight size={18} />
                 </>
               )}
             </button>
 
             {/* Trust badges */}
-            <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+            <div className="flex flex-wrap items-center justify-center gap-4 pt-1">
               <div className="flex items-center gap-1.5 text-gray-500 text-xs">
                 <CheckCircle size={12} className="text-green-500" />
                 SSL Encrypted
@@ -194,7 +212,7 @@ export default function ChamcoEnrollForm() {
               </div>
               <div className="flex items-center gap-1.5 text-gray-500 text-xs">
                 <CheckCircle size={12} className="text-green-500" />
-                NGN · USD coming soon
+                USD · NGN Accepted
               </div>
             </div>
           </form>
