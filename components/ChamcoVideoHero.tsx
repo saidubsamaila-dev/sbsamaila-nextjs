@@ -1,19 +1,33 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-import { ArrowRight } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
+import { ArrowRight, Volume2, VolumeX } from 'lucide-react'
 
 export default function ChamcoVideoHero() {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const [isMuted, setIsMuted] = useState(true)
 
   useEffect(() => {
     const video = videoRef.current
     if (!video) return
-    video.muted = true
-    video.play().catch(() => {
-      // Autoplay blocked by browser — video will show first frame
-    })
+    // Only call play() if autoPlay hasn't started it yet
+    if (video.paused) {
+      video.play().catch(() => {
+        // Autoplay blocked — video stays on first frame until user interacts
+      })
+    }
   }, [])
+
+  function toggleMute() {
+    const video = videoRef.current
+    if (!video) return
+    // If browser blocked autoplay entirely, clicking unmute should also start playback
+    if (video.paused) {
+      video.play().catch(() => {})
+    }
+    video.muted = !video.muted
+    setIsMuted(video.muted)
+  }
 
   return (
     <section className="relative w-full bg-black">
@@ -25,6 +39,7 @@ export default function ChamcoVideoHero() {
           muted
           playsInline
           loop
+          preload="auto"
           className="w-full block"
           style={{ maxHeight: '90vh', objectFit: 'cover' }}
         >
@@ -35,7 +50,26 @@ export default function ChamcoVideoHero() {
         {/* Bottom gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0f1729] via-transparent to-transparent pointer-events-none" />
 
-        {/* Enrol CTA overlay */}
+        {/* Mute / Unmute toggle — top right */}
+        <button
+          onClick={toggleMute}
+          aria-label={isMuted ? 'Unmute video' : 'Mute video'}
+          className="absolute top-4 right-4 flex items-center gap-2 bg-black/60 backdrop-blur-sm text-white text-xs font-semibold px-3 py-2 rounded-full border border-white/30 hover:border-white/70 hover:bg-black/80 transition-all"
+        >
+          {isMuted ? (
+            <>
+              <VolumeX size={14} />
+              Tap for Sound
+            </>
+          ) : (
+            <>
+              <Volume2 size={14} className="text-green-400" />
+              Sound On
+            </>
+          )}
+        </button>
+
+        {/* Enrol CTA overlay — bottom center */}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-full flex justify-center px-4">
           <a
             href="#enrol"
