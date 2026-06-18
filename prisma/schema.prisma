@@ -18,3 +18,26 @@ model CallbackRequest {
   status    String   @default("pending")
   createdAt DateTime @default(now())
 }
+
+model DiscountCode {
+  id          Int      @id @default(autoincrement())
+  code        String   @unique
+  salesperson String
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+}
+
+model Enrollment {
+  id           Int      @id @default(autoincrement())
+  firstName    String
+  lastName     String
+  email        String
+  program      String   @default("AI-103")
+  batch        String   @default("June 23, 2026")
+  amountKobo   Int
+  currency     String   @default("NGN")
+  discountCode String?
+  paystackRef  String   @unique
+  status       String   @default("paid")
+  createdAt    DateTime @default(now())
+}

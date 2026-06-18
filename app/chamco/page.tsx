@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ChamcoEnrollForm from '@/components/ChamcoEnrollForm'
 import {
   ArrowRight, Sparkles, Shield, Database, Cloud, Zap,
   Server, Monitor, GitMerge, Settings, CheckCircle, BookOpen,
@@ -154,9 +155,7 @@ export default function ChamcoPage() {
           {/* Enrol CTA overlay — bottom center */}
           <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-full flex justify-center px-4">
             <a
-              href="https://paystack.shop/pay/gz2msymxm0"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#enrol"
               className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white font-bold px-8 py-4 rounded-2xl shadow-2xl transition-all text-sm sm:text-base border-2 border-green-400/50"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -251,7 +250,7 @@ export default function ChamcoPage() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a
-              href="https://paystack.shop/pay/gz2msymxm0"
+              href="#enrol"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-green-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-green-700 transition-colors"
@@ -436,7 +435,7 @@ export default function ChamcoPage() {
                 <p className="text-gray-400 text-xs mt-1">Spots are limited. Register today!</p>
               </div>
               <a
-                href="https://paystack.shop/pay/gz2msymxm0"
+                href="#enrol"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-3 w-full flex items-center justify-center gap-2 bg-green-600 text-white text-sm font-bold py-3 rounded-xl hover:bg-green-700 transition-colors"
@@ -475,7 +474,7 @@ export default function ChamcoPage() {
 
           {/* Enrol CTA */}
           <div className="text-center">
-            <a href="#contact-chamco" className="inline-flex items-center gap-2 bg-blue-600 text-white font-bold px-10 py-4 rounded-xl hover:bg-blue-700 transition-colors text-lg">
+            <a href="#enrol" className="inline-flex items-center gap-2 bg-blue-600 text-white font-bold px-10 py-4 rounded-xl hover:bg-blue-700 transition-colors text-lg">
               ENROL NOW — LIMITED SEATS
               <ArrowRight size={20} />
             </a>
@@ -587,7 +586,7 @@ export default function ChamcoPage() {
                   <div><p className="text-blue-400 font-bold text-sm">{p.format}</p><p className="text-gray-500 text-xs">Format</p></div>
                   <div><p className="text-blue-400 font-bold text-sm">June 23</p><p className="text-gray-500 text-xs">Starts</p></div>
                 </div>
-                <a href="#contact-chamco" className="w-full flex items-center justify-center gap-2 bg-blue-600 text-white text-sm font-semibold py-2.5 rounded-lg hover:bg-blue-700 transition-colors">
+                <a href="#enrol" className="w-full flex items-center justify-center gap-2 bg-blue-600 text-white text-sm font-semibold py-2.5 rounded-lg hover:bg-blue-700 transition-colors">
                   Enrol Now <ArrowRight size={14} />
                 </a>
               </div>
@@ -844,6 +843,9 @@ export default function ChamcoPage() {
           </div>
         </div>
       </section>
+
+      {/* Enrollment Form */}
+      <ChamcoEnrollForm />
 
       {/* Contact CTA */}
       <section id="contact-chamco" className="py-20 bg-white/5 border-t border-white/10">
