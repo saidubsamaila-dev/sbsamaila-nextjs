@@ -141,14 +141,16 @@ export default function ChamcoPage() {
         <div className="relative w-full" style={{ maxHeight: '90vh', overflow: 'hidden' }}>
           {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
           <video
-            src="/chamco-partnership.mp4"
             autoPlay
             muted
             playsInline
             loop
             className="w-full block"
             style={{ maxHeight: '90vh', objectFit: 'cover' }}
-          />
+          >
+            <source src="/chamco-partnership.mov" type="video/quicktime" />
+            <source src="/chamco-partnership.mov" type="video/mp4" />
+          </video>
           {/* Bottom gradient to blend into page */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#0f1729] via-transparent to-transparent pointer-events-none" />
 
