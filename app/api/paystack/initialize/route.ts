@@ -7,9 +7,9 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://sbsamailaaccountan
 // NGN → kobo   (e.g. ₦1,200 = 120000 kobo)
 const PROGRAM_PRICES: Record<string, { amountCents: number; currency: string; displayPrice: string }> = {
   'AI-103: Azure AI Apps & Agents Developer (14 Weeks)': {
-    amountCents: 120000,   // $1,200
+    amountCents: 249900,   // $2,499
     currency: 'USD',
-    displayPrice: '$1,200',
+    displayPrice: '$2,499',
   },
   'Microsoft 365 Copilot Training': {
     amountCents: 150000,   // $1,500
