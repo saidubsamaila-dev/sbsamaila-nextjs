@@ -16,7 +16,7 @@ export default function PaymentSuccess() {
           Thank you for enrolling in the AI &amp; Digital Skills Empowerment Program.
         </p>
         <p className="text-gray-400 mb-10">
-          Your payment has been verified by Paystack. A confirmation email is on its way.
+          Your payment has been verified by Fincra. A confirmation email is on its way.
         </p>
 
         {/* Next steps */}

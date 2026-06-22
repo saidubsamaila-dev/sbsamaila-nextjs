@@ -72,7 +72,7 @@ export default function ChamcoEnrollForm() {
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 bg-green-600/20 border border-green-500/40 text-green-400 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-5">
             <Shield size={12} />
-            Secure Checkout · Powered by Paystack
+            Secure Checkout · Powered by Fincra
           </div>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-3">Enrol Now</h2>
           <p className="text-gray-300 text-lg">
@@ -186,7 +186,7 @@ export default function ChamcoEnrollForm() {
               {loading ? (
                 <>
                   <Loader2 size={18} className="animate-spin" />
-                  Redirecting to Paystack…
+                  Redirecting to Fincra…
                 </>
               ) : (
                 <>
@@ -194,7 +194,7 @@ export default function ChamcoEnrollForm() {
                     <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M2 10H22" stroke="white" strokeWidth="2" strokeLinecap="round"/>
                   </svg>
-                  {currentPrice ? `Pay ${currentPrice} · Proceed to Paystack` : 'Proceed to Secure Payment'}
+                  {currentPrice ? `Pay ${currentPrice} · Proceed to Fincra` : 'Proceed to Secure Payment'}
                   <ArrowRight size={18} />
                 </>
               )}
@@ -208,7 +208,7 @@ export default function ChamcoEnrollForm() {
               </div>
               <div className="flex items-center gap-1.5 text-gray-500 text-xs">
                 <CheckCircle size={12} className="text-green-500" />
-                Paystack Secured
+                Fincra Secured
               </div>
               <div className="flex items-center gap-1.5 text-gray-500 text-xs">
                 <CheckCircle size={12} className="text-green-500" />
