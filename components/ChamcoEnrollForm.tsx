@@ -25,7 +25,7 @@ export default function ChamcoEnrollForm() {
 
   // Fetch per-program prices from server
   useEffect(() => {
-    fetch('/api/paystack/initialize')
+    fetch('/api/fincra/checkout')
       .then(r => r.json())
       .then(setPrices)
       .catch(() => {})
@@ -43,7 +43,7 @@ export default function ChamcoEnrollForm() {
     setError('')
 
     try {
-      const res = await fetch('/api/paystack/initialize', {
+      const res = await fetch('/api/fincra/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...form, batch: BATCH }),

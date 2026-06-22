@@ -50,7 +50,7 @@ export async function sendAdminEnrollmentAlert(data: EnrollmentData) {
           <tr><td style="padding:8px 0;color:#6b7280">Batch Starts</td><td style="padding:8px 0;color:#111">${data.batch}</td></tr>
           <tr><td style="padding:8px 0;color:#6b7280">Amount Paid</td><td style="padding:8px 0;font-weight:700;color:#16a34a">${formatAmount(data.amountKobo, data.currency)}</td></tr>
           <tr><td style="padding:8px 0;color:#6b7280">Discount Code</td><td style="padding:8px 0;color:#111">${data.discountCode || 'None'}</td></tr>
-          <tr><td style="padding:8px 0;color:#6b7280">Paystack Ref</td><td style="padding:8px 0;color:#6b7280;font-size:12px">${data.paystackRef}</td></tr>
+          <tr><td style="padding:8px 0;color:#6b7280">Payment Ref</td><td style="padding:8px 0;color:#6b7280;font-size:12px">${data.paystackRef}</td></tr>
         </table>
         <div style="margin-top:20px;padding-top:20px;border-top:1px solid #e5e7eb">
           <a href="https://sbsamailaaccountants.com/admin/enrollments" style="background:#0D1B2A;color:white;padding:10px 20px;border-radius:6px;text-decoration:none;font-size:14px;font-weight:600">View Enrollment Dashboard</a>
@@ -75,7 +75,7 @@ export async function sendRegistrantConfirmation(data: EnrollmentData) {
           <tr style="background:#eff6ff"><td style="padding:10px;color:#6b7280;border:1px solid #dbeafe">Program</td><td style="padding:10px;font-weight:600;color:#111;border:1px solid #dbeafe">${data.program}</td></tr>
           <tr><td style="padding:10px;color:#6b7280;border:1px solid #e5e7eb">Batch Starts</td><td style="padding:10px;font-weight:600;color:#2563eb;border:1px solid #e5e7eb">${data.batch}</td></tr>
           <tr style="background:#f0fdf4"><td style="padding:10px;color:#6b7280;border:1px solid #bbf7d0">Amount Paid</td><td style="padding:10px;font-weight:700;color:#16a34a;border:1px solid #bbf7d0">${formatAmount(data.amountKobo, data.currency)}</td></tr>
-          <tr><td style="padding:10px;color:#6b7280;border:1px solid #e5e7eb">Payment Ref</td><td style="padding:10px;font-size:12px;color:#6b7280;border:1px solid #e5e7eb">${data.paystackRef}</td></tr>
+          <tr><td style="padding:10px;color:#6b7280;border:1px solid #e5e7eb">Payment Reference</td><td style="padding:10px;font-size:12px;color:#6b7280;border:1px solid #e5e7eb">${data.paystackRef}</td></tr>
         </table>
         <div style="background:#eff6ff;padding:16px;border-radius:8px;margin-bottom:20px">
           <p style="margin:0 0 8px;font-weight:700;color:#1e40af;font-size:14px">What Happens Next:</p>
