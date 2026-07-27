@@ -1,0 +1,16 @@
+{
+  "name": "fincra-payment-proxy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static-IP proxy that isolates Fincra credentials on a VPS and whitelists a single egress IP with Fincra. Vercel forwards HMAC-signed checkout requests here.",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

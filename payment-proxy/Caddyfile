@@ -1,0 +1,18 @@
+# Point a subdomain (e.g. pay.sbsamailaaccountants.com) at this VPS's public IP
+# with a DNS A record, then replace the hostname below. Caddy automatically
+# provisions and renews a free Let's Encrypt TLS certificate.
+
+pay.sbsamailaaccountants.com {
+	encode gzip
+
+	# Forward everything to the Node proxy on localhost
+	reverse_proxy 127.0.0.1:8080
+
+	# Basic hardening headers
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "no-referrer"
+		-Server
+	}
+}
