@@ -63,7 +63,7 @@ export default function Training() {
           </div>
           <div className="flex-shrink-0 relative w-16 h-16">
             <Image
-              src="https://www.sbsamailaaccountants.com/assets/oagf-logo-VL9U1IMu.jpg"
+              src="/assets/oagf-logo.webp"
               alt="Office of the Accountant General"
               fill
               className="object-contain"
@@ -84,7 +84,7 @@ export default function Training() {
         {/* Flyer Image */}
         <div className="relative w-full max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-lg mb-14 aspect-[3/4]">
           <Image
-            src="https://www.sbsamailaaccountants.com/assets/ai-103-flyer-DpatebOm.jpg"
+            src="/assets/ai-103-flyer.webp"
             alt="AI-103: Developing AI Apps & Agents on Azure — Course Flyer"
             fill
             className="object-contain bg-white"

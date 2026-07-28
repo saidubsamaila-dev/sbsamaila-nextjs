@@ -41,7 +41,7 @@ export default function ChamcoBanner() {
             <span className="text-gray-400 text-xs uppercase tracking-widest">In collaboration with</span>
             <div className="relative w-32 h-8">
               <Image
-                src="https://www.sbsamailaaccountants.com/assets/chamco-logo-BHk3-6fy.jpg"
+                src="/assets/chamco-logo.webp"
                 alt="Chamco Digital"
                 fill
                 className="object-contain object-left"

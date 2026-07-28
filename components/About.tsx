@@ -12,19 +12,19 @@ const stats = [
 const partners = [
   {
     name: 'Office of the Accountant General',
-    src: 'https://www.sbsamailaaccountants.com/assets/oagf-logo-VL9U1IMu.jpg',
+    src: '/assets/oagf-logo.webp',
   },
   {
     name: 'Chamco Digital',
-    src: 'https://www.sbsamailaaccountants.com/assets/chamco-logo-BHk3-6fy.jpg',
+    src: '/assets/chamco-logo.webp',
   },
   {
     name: 'ITM Nigeria',
-    src: 'https://www.sbsamailaaccountants.com/assets/itm-logo-BU4MHfPO.jpeg',
+    src: '/assets/itm-logo.webp',
   },
   {
     name: 'Integra Africa',
-    src: 'https://www.sbsamailaaccountants.com/assets/integra-africa-logo-Dfd0uAIV.jpeg',
+    src: '/assets/integra-logo.webp',
   },
 ]
 

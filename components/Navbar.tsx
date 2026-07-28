@@ -38,11 +38,11 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <Image
-              src="https://www.sbsamailaaccountants.com/assets/sbs-logo-CCtFOp74.jpg"
+              src="/assets/sbs-logo.webp"
               alt="Saidu B. Samaila & Co. Logo"
               width={40}
               height={40}
-              className="rounded-md object-contain"
+              className="rounded-md object-contain shrink-0"
             />
             <div>
               <p className="text-navy font-bold text-sm leading-tight">Saidu B. Samaila &amp; Co.</p>
