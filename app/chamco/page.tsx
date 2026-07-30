@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import ChamcoEnrollForm from '@/components/ChamcoEnrollForm'
 import ChamcoVideoHero from '@/components/ChamcoVideoHero'
+import CohortStartDate from '@/components/CohortStartDate'
 import {
   ArrowRight, Sparkles, Shield, Database, Cloud, Zap,
   Server, Monitor, GitMerge, Settings, CheckCircle, BookOpen,
@@ -538,7 +539,7 @@ export default function ChamcoPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="text-blue-400 text-xs font-bold uppercase tracking-widest mb-3">Upcoming Programs</p>
-            <h2 className="text-4xl font-extrabold text-white mb-3">Training Programs — June 23, 2026</h2>
+            <h2 className="text-4xl font-extrabold text-white mb-3">Training Programs — <CohortStartDate /></h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {[

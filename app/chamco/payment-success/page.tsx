@@ -1,7 +1,9 @@
 import Link from 'next/link'
 import { CheckCircle, ArrowRight } from 'lucide-react'
+import { nextCohortLabel } from '@/lib/cohort'
 
 export default function PaymentSuccess() {
+  const batch = nextCohortLabel()
   return (
     <main className="bg-[#0f1729] min-h-screen text-white flex items-center justify-center px-4 py-20">
       <div className="max-w-lg w-full text-center">
@@ -25,7 +27,7 @@ export default function PaymentSuccess() {
           <ul className="space-y-3">
             {[
               'Check your email inbox for your enrollment confirmation',
-              'Our team will send you joining instructions before June 23, 2026',
+              `Our team will send you joining instructions before ${batch}`,
               'Live sessions run on Microsoft Teams — link will be provided',
               'Sessions are recorded and shared after each class',
             ].map(step => (

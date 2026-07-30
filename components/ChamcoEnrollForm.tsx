@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { ArrowRight, Loader2, CheckCircle, Shield, Tag } from 'lucide-react'
+import { nextCohortLabel } from '@/lib/cohort'
 
 const PROGRAMS = [
   'AI-103: Azure AI Apps & Agents Developer (14 Weeks)',
@@ -9,7 +10,7 @@ const PROGRAMS = [
   'AI+ Workforce Enablement Program',
 ]
 
-const BATCH = 'June 23, 2026'
+const BATCH = nextCohortLabel()
 
 export default function ChamcoEnrollForm() {
   const [form, setForm] = useState({
@@ -77,7 +78,7 @@ export default function ChamcoEnrollForm() {
           <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-3">Enrol Now</h2>
           <p className="text-gray-300 text-lg">
             Next batch starts{' '}
-            <strong className="text-blue-400">June 23, 2026</strong>
+            <strong className="text-blue-400">{BATCH}</strong>
             {' '}· Limited seats
           </p>
         </div>

@@ -1,5 +1,7 @@
 import Image from 'next/image'
-import { Sparkles, CheckCircle } from 'lucide-react'
+import { Sparkles, CheckCircle, Play, ArrowRight } from 'lucide-react'
+import CohortStartDate from '@/components/CohortStartDate'
+import FeatureBanner from '@/components/FeatureBanner'
 
 const willLearn = [
   'Python programming & data analytics with NumPy, Pandas & Matplotlib',
@@ -70,6 +72,9 @@ export default function Training() {
             />
           </div>
         </div>
+
+        {/* AI-103 Feature Banner */}
+        <FeatureBanner />
 
         {/* Program Stats */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-14">
@@ -153,11 +158,32 @@ export default function Training() {
           </div>
         </div>
 
+        {/* Watch on YouTube */}
+        <a
+          href="https://youtube.com/@sambawasamaila"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-center gap-5 bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition-shadow mb-14"
+        >
+          <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-red-600 flex items-center justify-center group-hover:scale-105 transition-transform">
+            <Play size={26} className="text-white fill-white ml-1" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-navy font-extrabold text-lg">Watch on YouTube</p>
+            <p className="text-gray-500 text-sm">
+              Lessons, demos &amp; student stories on our channel — <span className="text-red-600 font-semibold">@sambawasamaila</span>
+            </p>
+          </div>
+          <span className="hidden sm:inline-flex items-center gap-1.5 bg-red-600 text-white font-bold text-sm px-5 py-2.5 rounded-xl group-hover:bg-red-700 transition-colors flex-shrink-0">
+            Subscribe <ArrowRight size={15} />
+          </span>
+        </a>
+
         {/* CTA Banner */}
         <div className="bg-gold rounded-2xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <p className="text-white text-xs font-bold uppercase tracking-widest mb-1">
-              Next Batch Starts — June 23, 2026
+              Next Batch Starts — <CohortStartDate />
             </p>
             <h3 className="text-white text-2xl font-extrabold">Take Control of Your Future</h3>
             <p className="text-white/80 text-sm mt-1">
