@@ -18,7 +18,7 @@ export default function FeatureBanner() {
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/assets/ai-banner.png"
+        src="/assets/ai-banner.jpg"
         alt="Unlock the Future of AI — AI-103: Developing AI Applications & Intelligent Agents on Microsoft Azure"
         onError={() => setOk(false)}
         className="w-full h-auto block group-hover:scale-[1.01] transition-transform duration-500"

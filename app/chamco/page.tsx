@@ -2,6 +2,7 @@ import Link from 'next/link'
 import ChamcoEnrollForm from '@/components/ChamcoEnrollForm'
 import ChamcoVideoHero from '@/components/ChamcoVideoHero'
 import CohortStartDate from '@/components/CohortStartDate'
+import FeatureBanner from '@/components/FeatureBanner'
 import {
   ArrowRight, Sparkles, Shield, Database, Cloud, Zap,
   Server, Monitor, GitMerge, Settings, CheckCircle, BookOpen,
@@ -403,7 +404,7 @@ export default function ChamcoPage() {
               </ul>
               <div className="bg-blue-600/20 border border-blue-500/30 rounded-xl p-4 text-center">
                 <p className="text-blue-400 text-xs font-bold uppercase tracking-widest mb-1">Next Batch Starts</p>
-                <p className="text-white text-2xl font-extrabold">JUNE 23, 2026</p>
+                <p className="text-white text-2xl font-extrabold"><CohortStartDate /></p>
                 <p className="text-gray-400 text-xs mt-1">Spots are limited. Register today!</p>
               </div>
               <a
@@ -531,6 +532,13 @@ export default function ChamcoPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* AI-103 Promo Banner */}
+      <section className="pb-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FeatureBanner />
         </div>
       </section>
 

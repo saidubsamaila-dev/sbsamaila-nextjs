@@ -1,6 +1,7 @@
 import { ArrowRight, CheckCircle, Clock, Users, BookOpen, Award, Briefcase } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import CohortStartDate from '@/components/CohortStartDate'
 
 const whatYouLearn = [
   'Python programming & data analytics with NumPy, Pandas & Matplotlib',
@@ -157,7 +158,7 @@ export default function ChamcoBanner() {
             </ul>
             <div className="mt-6 bg-blue-600/20 border border-blue-500/30 rounded-xl p-4 text-center">
               <p className="text-blue-400 text-xs font-bold uppercase tracking-widest mb-1">Next Batch Starts</p>
-              <p className="text-white text-2xl font-extrabold">JUNE 23, 2026</p>
+              <p className="text-white text-2xl font-extrabold"><CohortStartDate /></p>
               <p className="text-gray-400 text-xs mt-1">Spots are limited. Register today!</p>
             </div>
             <a

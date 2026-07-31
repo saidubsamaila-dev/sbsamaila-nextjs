@@ -89,7 +89,7 @@ export default function Training() {
         {/* Flyer Image */}
         <div className="relative w-full max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-lg mb-14 aspect-[3/4]">
           <Image
-            src="/assets/ai-103-flyer.webp"
+            src="/assets/ai-103-flyer.jpg"
             alt="AI-103: Developing AI Apps & Agents on Azure — Course Flyer"
             fill
             className="object-contain bg-white"
