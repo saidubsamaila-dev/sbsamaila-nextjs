@@ -527,7 +527,7 @@ export default function ChamcoPage() {
                 </ul>
                 <div className="mt-6 bg-blue-600/20 border border-blue-500/30 rounded-xl p-4 text-center">
                   <p className="text-gray-400 text-xs uppercase tracking-widest mb-1">Current Cohort Starts</p>
-                  <p className="text-white text-xl font-extrabold">19th MAY, 2026</p>
+                  <p className="text-white text-xl font-extrabold"><CohortStartDate variant="current" /></p>
                 </div>
               </div>
             </div>

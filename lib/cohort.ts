@@ -36,3 +36,16 @@ export function formatCohort(d: Date): string {
 export function nextCohortLabel(today: Date = new Date()): string {
   return formatCohort(getNextCohortDate(today))
 }
+
+/** The current (most-recent) cohort start date — the last 23rd on/before today. */
+export function getCurrentCohortDate(today: Date = new Date()): Date {
+  const y = today.getFullYear()
+  const m = today.getMonth()
+  if (today.getDate() >= COHORT_DAY) return new Date(y, m, COHORT_DAY)
+  return new Date(y, m - 1, COHORT_DAY) // JS rolls the year back automatically
+}
+
+/** The current cohort start date, pre-formatted (e.g. "July 23, 2026"). */
+export function currentCohortLabel(today: Date = new Date()): string {
+  return formatCohort(getCurrentCohortDate(today))
+}

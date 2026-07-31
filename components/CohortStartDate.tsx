@@ -1,18 +1,28 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { nextCohortLabel } from '@/lib/cohort'
+import { nextCohortLabel, currentCohortLabel } from '@/lib/cohort'
 
 /**
- * Renders the next cohort start date. Computed on the client and refreshed on
- * mount so it stays accurate as days pass — the date "moves forward" on its own
- * without a redeploy. To pin it manually, set COHORT_OVERRIDE in lib/cohort.ts.
+ * Renders a cohort start date, computed on the client and refreshed on mount so
+ * it stays accurate as days pass — the date "moves forward" on its own without a
+ * redeploy. `variant="next"` (default) shows the upcoming cohort; `variant="current"`
+ * shows the cohort currently running. To pin the next date, set COHORT_OVERRIDE
+ * in lib/cohort.ts.
  */
-export default function CohortStartDate({ className }: { className?: string }) {
-  const [label, setLabel] = useState(() => nextCohortLabel())
+export default function CohortStartDate({
+  className,
+  variant = 'next',
+}: {
+  className?: string
+  variant?: 'next' | 'current'
+}) {
+  const [label, setLabel] = useState(() =>
+    variant === 'current' ? currentCohortLabel() : nextCohortLabel()
+  )
   useEffect(() => {
-    setLabel(nextCohortLabel())
-  }, [])
+    setLabel(variant === 'current' ? currentCohortLabel() : nextCohortLabel())
+  }, [variant])
   return (
     <span className={className} suppressHydrationWarning>
       {label}
